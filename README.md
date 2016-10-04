@@ -6,7 +6,7 @@ Probably the easiest workflow for you is to:
  2. Create your own, free, [GitHub](https://github.com/) account, if you don't have one already.
  2. Unless you have a particular affinity for the terminal, get a UI like [SourceTree](https://www.sourcetreeapp.com/), thank me later (or buy me lunch).
  3. [Fork](https://guides.github.com/activities/forking/) **this** repository to your own GitHub account.
- 4. When you log into your own github account, you should see the forked copy of this repo. Cone **that** copy, located on your github account, onto your local machine.
+ 4. When you log into your own github account, you should see the forked copy of this repo. Clone **that** copy, located on your github account, onto your local machine.
  5. From inside SourcTree, add the original repository (THIS one you're on right now owned by me) as a remote repo.
 
 ## Videos
