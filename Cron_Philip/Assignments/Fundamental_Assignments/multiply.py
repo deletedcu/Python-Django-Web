@@ -8,4 +8,3 @@ def multiply( indexlist, multiplier ):
 a = [2,4,10,16]
 b = multiply(a, 5)
 print b
-

@@ -19,3 +19,4 @@ index = 1
 while index <= 5000:
     coin_tosses()
     index = index + 1
+    

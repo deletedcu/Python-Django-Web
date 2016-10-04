@@ -8,4 +8,3 @@ def draw_stars(input):
 x = [4,6,1,3,5,7,25]
 y = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"]
 draw_stars(y)
-
