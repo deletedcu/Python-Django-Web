@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ninjas Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/landing_page.css') }}">
+</head>
+<body>
+    <h1>Hello {{ninjas}}</h1>
+    <p>How does a ninja deal with fear?</p>
+    <img src="static/img/ninja.jpeg" alt="Ninja Picture">
+    <p>{{answer}}</p>
+</body>
+</html>
