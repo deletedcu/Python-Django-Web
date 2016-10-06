@@ -1,0 +1,56 @@
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+  
+  $(document).ready(function(){
+    // zip arrays into map (p.55)
+    function arraysToMap(arr1, arr2) {
+      var dict = {};
+
+      for (var i = 0; i < arr1.length && i < arr2.length; i++) {
+        dict[arr1[i]] = arr2[i];
+      }
+
+      // print return value for verification
+      console.log("\narraysToMap results...");
+      for (key in dict) {
+        console.log(key + ": " + dict[key]);
+      }
+
+      return dict;
+    }
+
+    // invert hash (p.55)
+    function invertHash(hash) {
+      invertedHash = {};
+
+      for (key in hash) {
+        invertedHash[hash[key]] = key;
+      }
+
+      // print return value for verification
+      console.log("\ninvertHash results...")
+      for (key in invertedHash) {
+        console.log(key + ": " + invertedHash[key]);
+      }
+
+      return invertedHash;
+    }
+
+    // function tests
+    arraysToMap(["abc", 3, "yo"], [42, "wassup", true]);
+    invertHash({"name": "zaphod", "charm": "high", "morals": "dicey"});
+  });
+  
+  
+  // $(function(){
+  //   // or here, pick one.
+  // });
+  </script>
+</head>
+<body>
+
+</body>
+</html>
