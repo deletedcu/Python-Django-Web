@@ -6,7 +6,7 @@ Probably the easiest workflow for you is to:
  2. Create your own, free, [GitHub](https://github.com/) account, if you don't have one already.
  2. Unless you have a particular affinity for the terminal, get a UI like [SourceTree](https://www.sourcetreeapp.com/), thank me later (or buy me lunch).
  3. [Fork](https://guides.github.com/activities/forking/) **this** repository to your own GitHub account.
- 4. When you log into your own github account, you should see the forked copy of this repo. Clone **that** copy, located on your github account, onto your local machine.
+ 4. When you log into your own github account, you should see the forked copy of this repo. Cone **that** copy, located on your github account, onto your local machine.
  5. From inside SourcTree, add the original repository (THIS one you're on right now owned by me) as a remote repo.
 
 ## Videos
@@ -40,7 +40,7 @@ I will accept and comment on your code changes daily.
 
 As mentioned, **Every.Single.Damn.Day** I want you to commit your class assignments so I can keep track your _daily_ progress. Also after doing the morning algorithms during the week, type up your assignment into the example JS HTML page I've provided and submit that too. You need to be programming _every day_ to become a developer.
 
-At the Dojo, we only cover git for a portion of a day during Web Fundamentals (which most of you slept through =). When you graduate, you need to know how to use it comfortably and proficiently, otherwise you'll be the laughing stock of the town. You will be a version-control master by the end of this course because we'll use this repository to submit and review assignments. You can track the schedule and solutions in the [Assignment Calendar](https://github.com/authman/Python201609/blob/master/Apatira_Authman/New%20Schedule.pdf) as soon as I get it up. Likewise, the algorithm challenges you'll be expected to complete can be found in the Algorithms Calendar.
+At the Dojo, we only cover git for a portion of a day during Web Fundamentals (which most of you slept through =). When you graduate, you need to know how to use it comfortably and proficiently, otherwise you'll be the laughing stock of the town. You will be a version-control master by the end of this course because we'll use this repository to submit and review assignments. You can track the schedule and solutions in the [Assignment Calendar](https://github.com/dallaspythondojo/python/blob/master/Apatira_Authman/New%20Schedule.pdf) as soon as I get it up. Likewise, the algorithm challenges you'll be expected to complete can be found in the Algorithms Calendar.
 
 The second reason we're starting this is because that I like GitHub's social aspect, which will allow me to add comments into your code, have you correct your code, keep source control so you can see the evolution of your own progress, and again--get very familiar with pull requests, pushing, and merge conflict errors.
 
