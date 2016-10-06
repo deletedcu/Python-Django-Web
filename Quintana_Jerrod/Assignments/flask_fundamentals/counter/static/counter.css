@@ -1,0 +1,27 @@
+body{
+  width: 1000px;
+  height: 1000px;
+}
+.body{
+  margin: auto;
+  margin: 260px 0 0 200px;
+  text-align: center;
+}
+a{
+  display: block;
+  text-decoration: none;
+  width: 100px;
+  height: 25px;
+  margin: 15px 0 15px 350px;
+  background-color: lightgrey;
+  text-align: center;
+  padding-top: 5px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 2px 0px black;
+}
+.ninja{
+  color: blue;
+}
+.hacker{
+  color: darkred;
+}
