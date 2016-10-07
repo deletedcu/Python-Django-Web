@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dojo Survey Results</title>
+</head>
+<body>
+	<form id="wrapper" action="/">
+		<h3>Submitted Info</h3>
+		<label>Name:</label>
+		<p>{{ session['name'] }}</p>
+		<label>Dojo Location:</label>
+		<p>{{ session['location'] }}</p>
+		<label>Favorite Track:</label>
+		<p>{{ session['fav_track'] }}</p>
+		<label>Comment:</label>
+		<p>{{ session['comment'] }}</p>
+		<input type="submit" value="go back">
+	</form>
+</body>
+</html>
