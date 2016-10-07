@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Add User</title>
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/dojos.css') }}">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        $('#add-user').click(function(){
+          $('#table').append("<tr><td>" + $('#fn').val() + "</td><td>" + $('#ln').val() + "</td><td>" + $('#email').val() + "</td><td>" + $('#phone').val() + "</td></tr>");
+          $('#fn').val('');
+          $('#ln').val('');
+          $('#email').val('');
+          $('#phone').val('');
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <table id="table">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Address</th>
+          <th>Contact #</th>
+        </tr>
+      </table>
+      <h1>Add User</h1>
+      <form id="form-data">
+        <p>First Name:<input id="fn" type="text" name="fn"></p>
+        <p>Last Name:<input id="ln" type="text" name="ln"></p>
+        <p>Email Address:<input id="email" type="email" name="email"></p>
+        <p>Contact No.: <input id="phone" type="phone" name="phone"></p>
+        <button id="add-user" type="button">Add User</button>
+      </form>
+    </div>
+  </body>
+</html>
