@@ -1,0 +1,42 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+ outline: 0px;
+ border: 0px;
+}
+#wrapper{
+  margin: 0 auto;
+  width: 800px;
+}
+table{
+  border: solid 1px black;
+}
+th, td{
+  padding: 2px 20px;
+}
+h1{
+  border-bottom: solid 1px darkgrey;
+  margin: 30px 0;
+}
+input{
+  border: solid 1px;
+  Padding: 2px 0;
+  margin: 2px;
+  /*display: block;*/
+}
+p{
+  display: block;
+  text-align: right;
+  margin: 3px 0;
+}
+button{
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: white;
+  margin-top: 20px;
+}
+#form-data{
+  width: 280px;
+}

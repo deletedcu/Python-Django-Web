@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Everything you ever wanted to know about Ninjas</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_ninja.css') }}">
+        <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('img').click(function() {
+                    var photo = $(this).attr("src")
+                    $(this).attr("src", $(this).attr("data-alt-src"))
+                    $(this).attr("data-alt-src", photo)
+                });
+            });
+        </script>
+    </head>
+    <body>
+      <h3>Below is everything you ever wanted to know about Ninjas, duh.</h3>
+
+      <p>Ninjas are tricky... {{ phrase }}</p>
+      <div id="wrapper">
+          <img src="{{ url_for('static', filename='img/ninja0.png') }}" data-alt-src="{{ url_for('static', filename='img/cat0.png') }}">
+          <img src="{{ url_for('static', filename='img/ninja1.png') }}" data-alt-src="{{ url_for('static', filename='img/cat1.png') }}">
+         <img src="{{ url_for('static', filename='img/ninja2.png') }}" data-alt-src="{{ url_for('static', filename='img/cat2.png') }}">
+         <img src="{{ url_for('static', filename='img/ninja3.png') }}" data-alt-src="{{ url_for('static', filename='img/cat3.png') }}">
+         <img src="{{ url_for('static', filename='img/ninja4.png') }}" data-alt-src="{{ url_for('static', filename='img/cat4.png') }}">
+    </body>
+     <p>{{ phrase2 }}</p>
+</html>
+
+<!-- linking a css style sheet -->
+<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style_sheet.css') }}"> -->
+<!-- linking a javascript file -->
+<!-- <script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script> -->
+<!-- linking an image -->
+<!-- <img src="{{ url_for('static', filename='img/my_img.png') }}"> -->
