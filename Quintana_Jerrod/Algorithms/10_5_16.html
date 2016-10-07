@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  $(docuemnt).ready(function(){
+    function removingBlanks(str){
+      var new = '';
+      for (var i = 0; i < str.length; i++){
+        if (str[i] != ' ')
+          new += str[i];
+      }
+      return new;
+    }
+    function acronym(str){
+      var new = '';
+      str.toUpperCase();
+      for (var i = 0; i < str.length; i ++){
+        if (i = 0){
+          // this is to be specific incase they give us a string that can start with a space, and line 25 is incase it can end in a space
+          if (str[0] != ' '){
+            new += str[0]
+          }
+        } else if (i == str.length-1){
+          break;
+        } else if (str[i] == ' '){
+          new += str[i+1];
+        }
+      }
+      return new;
+    }
+    function digit(str){
+      var new = '';
+      for (var i = 0; i < str.length; i++){
+        if(parseInt(str[i]) != false){
+          new += str[i];
+        }
+      }
+      return new;
+    }
+
+  });
+
+  $(function(){
+  });
+  </script>
+</head>
+<body>
+
+</body>
+</html>

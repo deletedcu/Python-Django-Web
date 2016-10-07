@@ -1,0 +1,1 @@
+alert("this is the ninja page alert to test if my scripts are working. i hope they are :(. so they weren't at first but it appears if you simply switch the orientation of the slashes it will. apparently that's important...who knew..?")
