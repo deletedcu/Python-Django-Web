@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>this is my new page in the dojo directory</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='stylesheet.css')}}">
+</head>
+<body>
+<h3>here is some h3 text. again, let us pray that it's in color</h3>
+<p>here is some p element text, and here is a variable that is being pulled from my server.py file: {{new_var}}</p>
+<form>
+	Type your name here: <input type="text" name="inputbox">
+	Type your cell phone provider here: <input type="text" name="cellprovider">
+	Click here to submit: <input type="submit" name="submitbutton">
+</form>
+</body>
+</html>
