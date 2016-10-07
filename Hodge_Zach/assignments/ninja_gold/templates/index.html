@@ -1,0 +1,55 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <p>Your gold: {{gold}}</p>
+
+    <div class="box">
+        <h2>Farm</h2>
+        <p>(earns 10-20 gold)</p>
+
+        <form action="/process_money" method="post">
+            <input type="hidden" name="locations" value="farm">
+            <input type="submit" name="submit" value="Find Gold!">
+        </form>
+    </div>
+
+    <div class="box">
+        <h2>Cave</h2>
+        <p>(earns 5-10 gold)</p>
+
+        <form action="/process_money" method="post">
+            <input type="hidden" name="locations" value="cave">
+            <input type="submit" name="submit" value="Find Gold!">
+        </form>
+    </div>
+
+    <div class="box">
+        <h2>House</h2>
+        <p>(earns 2-5 gold)</p>
+
+        <form action="/process_money" method="post">
+            <input type="hidden" name="locations" value="house">
+            <input type="submit" name="submit" value="Find Gold!">
+        </form>
+    </div>
+
+    <div class="box">
+        <h2>Casino</h2>
+        <p>(earns/takes 0-50 gold)</p>
+
+        <form action="/process_money" method="post">
+            <input type="hidden" name="locations" value="casino">
+            <input type="submit" name="submit" value="Find Gold!">
+        </form>
+    </div>
+
+    <p>Activities:</p>
+    <div id="activities">
+        {% for value in (session['activities']):%}
+        <p class="{{value['class']}}">{{value}}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
