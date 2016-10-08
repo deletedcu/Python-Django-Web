@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style media="screen">
+
+            label {
+                display: block;
+            }
+            textarea {
+                display: block;
+            }
+        </style>
+        <title>Create Dojo Survey</title>
+
+    </head>
+    <body>
+        <h1>Dojo Survey</h1>
+        <form class="form" action="/users" method="post">
+            Name: <input type="text" name="name">
+
+
+            <label for="format">Dojo Location
+                <select class="" name="location">
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Dallas">Dallas</option>
+                    <option value="Seattle">Seattle</option>
+                </select>
+            </label>
+            <label for="format">Laguage
+            <select class="Language" name="language" value="language">
+                <option value="Python">Python</option>
+                <option value="CSS">CSS</option>
+                <option value="HTML">HTML</option>
+                <option value="Javascript">Javascript</option>
+            </select></label>
+            <label for="comments" value="comments">Comments
+            <textarea name="comments" rows="8" cols="40"></textarea></label>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <button type="submit" name="submit">Submit the form</button>
+        </form>
+    </body>
+</html>

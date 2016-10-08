@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style media="screen">
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p class='error'>{{message}}</p>
+          {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="/process" method='POST'/>
+        <h2>Email:</h2>
+        <input type="text" name="email"/>
+        <h2>First Name:</h2>
+        <input type="text" name="fname"/>
+        <h2>Last Name:</h2>
+        <input type="text" name="lname"/>
+        <h2>Password:</h2>
+        <input type="text" name="password"/>
+        <h2>Confirm Password:</h2>
+        <input type="text" name="cpassword"/>
+        <input type="submit" name="Submit"/>
+    </form>
+
+</body>
+</html>
