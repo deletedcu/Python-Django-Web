@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Remove Shorter Strings</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    // Given a string array and value (length), remove any strings shorter
+    // than length from the array.
+
+    function rmShortString(arr, len){
+      var new_arr=[]
+      for(var i=0; i<arr.length; i++){
+        if(arr[i].length>=len){
+          new_arr.push(arr[i]);
+        }
+      }
+      return new_arr;
+    }
+
+    //Test case below:
+    console.log(rmShortString(["Honey", "pie", "you", "are", "driving", "me", "crazy"], 4));
+
+  });
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

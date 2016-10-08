@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Fast Factorial</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    // Re-create the Factorial function but use a time-space tradeoff to accelerate the average running time.
+
+    var results=[1,1];
+
+    function fastFact(num){
+      if(num<results.length){
+        return results[num];
+        }
+      else{
+        while(num>=results.length){
+          results[results.length]=results.length*results[results.length-1]
+          }
+        }
+    return results[num];
+    }
+    //Test case below:
+    console.log(fastFact(2));
+    console.log(fastFact(3));
+
+
+  });
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
