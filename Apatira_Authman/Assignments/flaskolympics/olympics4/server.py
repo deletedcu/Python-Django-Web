@@ -8,7 +8,7 @@ def myfirstfunction():
         session['title'] = 'hello world'
     return render_template('index.html', name="Mike")
 
-@app.route('/do_something')
+@app.route('/do_something', methods=['POST'])
 def mysecondfunction():
     print request.form
     session['title'] = request.form['title']

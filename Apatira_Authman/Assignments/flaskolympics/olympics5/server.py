@@ -20,3 +20,6 @@ if __name__ == '__main__':
 Will this work?  What
 What will this print???
 """
+
+"""
+This will work. It prints I love flask! And peaches to a template named /peaches

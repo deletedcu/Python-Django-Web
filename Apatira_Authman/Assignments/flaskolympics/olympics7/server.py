@@ -32,3 +32,6 @@ if __name__ == '__main__':
 """
 Explain line 24!
 """
+
+"""
+Takes the value from the form with a name of "buiiding". Then finds a random number at the index of that value in the dictionary of buildings.
