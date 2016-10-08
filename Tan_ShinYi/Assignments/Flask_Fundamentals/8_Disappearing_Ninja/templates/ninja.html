@@ -1,0 +1,21 @@
+<html>
+    <head>
+       <title>Disappearing Ninjas</title>
+    </head>
+    <body>
+     {% if nav=="none": %}
+      <img src="{{ url_for('static', filename='tmnt.png')}}">
+      {% elif nav=="blue":%}
+      <img src="{{ url_for('static', filename='leonardo.jpg')}}">
+      {% elif nav=="orange":%}
+      <img src="{{ url_for('static', filename='michelangelo.jpg')}}">
+      {% elif nav=="red":%}
+      <img src="{{ url_for('static', filename='raphael.jpg')}}">
+      {% elif nav=="purple":%}
+      <img src="{{ url_for('static', filename='donatello.jpg')}}">
+      {%else:%}
+      <img src="{{ url_for('static', filename='notapril.jpg')}}">
+     {% endif %}
+      </div>
+    </body>
+</html>
