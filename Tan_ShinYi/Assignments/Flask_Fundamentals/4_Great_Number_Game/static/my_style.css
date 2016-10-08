@@ -1,0 +1,35 @@
+*{
+  font-family: sans-serif;
+}
+
+h1, h3 {
+  margin: 20px auto;
+  width: 900px;
+  text-align: center;
+}
+
+#guessed{
+  width:300px;
+  height:300px;
+  margin: 10px auto;
+  text-align: center;
+  color:white;
+  font-size: 50px;
+  padding: 20px;
+  border: 2px solid black;
+
+}
+
+.red{
+  background-color:red;
+}
+
+.green{
+  background-color:green;
+}
+
+form{
+  width:200px;
+  margin: 20px auto;
+  text-align: center;
+}
