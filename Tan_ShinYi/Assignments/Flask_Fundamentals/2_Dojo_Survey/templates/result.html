@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Form Test Show</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='my_style2.css') }}">
+  </head>
+  <body>
+    <div id="info">
+      <h2>Submitted Info</h2>
+        <table>
+          <tbody>
+            <tr>
+              <td>Name:</td>
+              <td>{{session['name']}}</td>
+            </tr>
+            <tr>
+              <td>Dojo Location:</td>
+              <td>{{session['location']}}</td>
+            </tr>
+            <tr>
+              <td>Favorite Language:</td>
+              <td>{{session['language']}}!!!</td>
+            </tr>
+            <tr>
+              <td>Comment:</td>
+              <td>{{session['comment']}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="/"><button>Go Back</button></a>
+      </form>
+    </div>
+  </body>
+</html>
