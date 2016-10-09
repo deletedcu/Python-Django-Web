@@ -1,0 +1,22 @@
+label{
+	display: block;
+	margin-bottom: 5px;
+}
+
+input, textarea{
+	margin-bottom: 15px;
+	width: 150px;
+}
+
+input{
+	height: 50px;
+}
+
+textarea{
+	height: 150px;
+}
+
+img{
+	width: 400px;
+	height: 225px;
+}

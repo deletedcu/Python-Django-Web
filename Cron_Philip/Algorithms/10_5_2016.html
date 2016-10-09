@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+  
+  $(document).ready(function(){
+    // ... your assignment 
+
+    function removeBlank(string) {
+    var noSpaces = [];
+      for(var i = 0; i < string.length; i++){
+        if(string[i] != " "){
+            noSpaces.push(string[i]);
+        }
+      }
+      return noSpaces;
+    }
+
+    function acronyms(string) {
+    var splitstring = string.split(" ");
+    var acronym = [];
+        for(var i = 0; i < splitstring.length; i++){
+            acronym.push(splitstring[i][0].touppercase());
+        }
+        return acronym;
+    }
+  });
+  
+  
+  $(function(){
+    // or here, pick one.
+  });
+  </script>
+</head>
+<body>
+
+</body>
+</html>

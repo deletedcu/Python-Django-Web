@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Acronyms</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    // Create a function that, given a string,
+    // returns the string's acronym(first leters only, capitalized).
+
+    function acronyms(str){
+      var split_str=str.split(" ");
+      var first_letter=[];
+      for (var i=0; i<split_str.length;i++){
+        first_letter.push(split_str[i][0]);
+      }
+      return first_letter.join("").toUpperCase();
+    }
+
+    //Test case below:
+    console.log(acronyms("there's no free lunch - gotta pay yer way."));
+
+  });
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

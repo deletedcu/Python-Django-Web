@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>String: Get Digits</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    // Create a JS function that given a string, returns the integer made from the string's digits.
+    // Given "0s1a994hasdf387k1!?", the function should return the number 019943871.
+
+    function getDigits(str){
+      var num_list=[];
+      for(var i=0;i<str.length;i++){
+        //had to split the following if statement into 2 lines because there
+        //were too many conditionals... there must be a cleaner way to execute this
+        if(str[i]=="1" || str[i]=="2" || str[i]=="3"|| str[i]=="4"|| str[i]=="5"|| str[i]=="6"){
+          num_list.push(str[i]);
+        }
+        else if(str[i]=="7"|| str[i]=="8"|| str[i]=="9"|| str[i]=="0"){
+          num_list.push(str[i]);
+        }
+      }
+      return num_list.join("");
+    }
+
+    //Test case below:
+    console.log(getDigits("0s1a994hasdf387k1!?"));
+
+  });
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

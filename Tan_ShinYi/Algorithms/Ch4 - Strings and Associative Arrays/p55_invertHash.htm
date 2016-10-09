@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Invert Hash</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    // Convert hash keys to values and values to keys.
+    // Ex: {"name": "Zaphod", "charm": "high", "morals": "dicey"},
+    // return { "Zaphod": "name", "high": "charm", "dicey": "morals"}
+
+    function invertHash(arr){
+      var inverted={};
+      for(var key in arr){
+        inverted[arr[key]]=key;
+        }
+      return inverted;
+    }
+
+    //Test case below:
+    console.log(invertHash({"name": "Zaphod", "charm": "high", "morals": "dicey"}));
+
+  });
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
