@@ -1,0 +1,26 @@
+<html>
+    <head>
+       <title>Survey</title>
+    </head>
+    <body>
+      <h1>Survey</h1>
+      <form action='/users' method='post'>
+          <label>Name: <input id='name' type='text' name='name'></label>
+          
+          Dojo: <select id='dojo' name='dojo' class='selectpicker form-control'>
+            <option value="{{'Dallas'}}">{{'Dallas'}}</option>
+            <option value="{{'San Jose'}}">{{'San Jose'}}</option>
+            <option value="{{'Seattle'}}">{{'Seattle'}}</option>
+            <option value="{{'Los Angeles'}}">{{'LA'}}</option>
+          </select>
+          Language: <select id='language' name='language'>
+            <option value="{{'Python'}}">{{'Python'}}</option>
+            <option value="{{'Ruby'}}">{{'Ruby'}}</option>
+            <option value="{{'Means'}}">{{'Means'}}</option>
+            <option value="{{'Java'}}">{{'Java'}}</option>
+          </select>
+          Comment (optional): <input type='text' id='comment' name='comment'>
+          <input type='submit' value='Submit'>
+      </form>
+    </body>
+</html>
