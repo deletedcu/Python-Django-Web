@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Palindrome</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    // Create a function that returns a boolean whether the string is a strict palindrome. For "a x a"
+    // or "racecar", return true. If given "Dud" or "oho!" return false.
+
+    function isPalindrome(str){
+      var start=0;
+      var end=str.length-1;
+        while(start<end){
+          if(str[start]!=str[end]){
+            return false;
+          }
+        start++;
+        end--;
+        }
+      return true;
+    }
+    //Test case below:
+    console.log(isPalindrome("Dud"));
+    console.log(isPalindrome("a x a"));
+
+
+  });
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

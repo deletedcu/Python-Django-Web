@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Remove Blanks</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    //Create a funcaiton that, given a string, returns all of that string's contents, but
+    //without blanks. If given the string "Pl ayTha tF u nkyM usi c", return
+    //"PlayThatFunkyMusic"
+
+    function removeBlanks(arr){
+      var split_arr=arr.split(" ");
+      return split_arr.join("");
+    }
+
+    //Test case below:
+    console.log(removeBlanks("Pl ayTha tF u nkyM usi c"));
+
+  });
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
