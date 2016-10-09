@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Fancy Fibonacci</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    // Use time-space tradeoff to accelerate running time of iFib(num) that returns num_th number
+    // in the Fibonacci sequence. Recall iFib(0)=0, iFib(1)=1, iFib(2)=1, iFib(3)=2
+    var output=[0,1];
+
+    function fancyFib(num){
+      if(num<output.length){
+        return output[num];
+        }
+      else{
+        while(num>=output.length){
+           output[output.length]=output[output.length-2]+output[output.length-1];
+          }
+        }
+    return output[num];
+    }
+    //Test case below:
+    console.log(fancyFib(0));
+    console.log(fancyFib(3));
+
+
+  });
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

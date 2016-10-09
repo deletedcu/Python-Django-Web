@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter</title>
+</head>
+<body>
+    <h1>Counter</h1>
+    <p>{{session['counter']}} times</p>
+    <!-- <button>+2</button> -->
+    <form>
+        <button formaction="{{url_for('clear')}}">Hackers click here!</button>
+        <button formaction="{{url_for('add')}}">Ninjas click here!</button>
+    </form>
+</body>
+</html>
