@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold</title>
+	<style>
+		*{
+			
+		}
+		.location{
+			height: 200px;
+			width: 200px;
+			border-style: solid;
+			border-width: 1px;
+			display: inline-block;
+			margin: 20px 0 0 20px;
+			text-align: center;
+			background-color: lightgrey;
+		}
+		.header{
+			margin: 20px 0 0 40px;
+		}
+		.output p{
+
+		}
+
+		.red{
+			color: red;
+
+		}
+		.green{
+			color: green;
+
+		}
+		.textarea{
+			overflow: auto;
+			width: 600px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<p>Your Gold: </p>
+		<p>{{ session['gold'] }}</p>
+		</form>
+	</div>
+
+	<div id="middle">
+		<div class="location">
+			<h3>Farm</h3>
+			<p>(earns 10-20 gold shekels)</p>
+			<form method="post" name="farm" action="/process">
+				<input type="hidden" name="location" value="farm">
+				<input type="submit" name="Find Shekels">
+			</form>
+		</div>
+		<div class="location">
+			<h3>Cave</h3>
+			<p>(earns 5-10 gold shekels)</p>
+			<form method="post" name="cave" action="/process">
+				<input type="hidden" name="location" value="cave">
+				<input type="submit" name="Find Shekels">
+			</form>
+		</div>
+		<div class="location">
+			<h3>House</h3>
+			<p>(earns 2-5 gold shekels)</p>
+			<form method="post" name="house" action="/process">
+				<input type="hidden" name="location" value="house">
+				<input type="submit" name="Find Shekels">
+			</form>
+		</div>
+		<div class="location">
+			<h3>Casino</h3>
+			<p>(earns/loses 0-50 gold shekels)</p>
+			<form method="post" name="casino" action="/process">
+				<input type="hidden" name="location" value="casino">
+				<input type="submit" name="Find Shekels">
+			</form>
+		</div>
+	</div>
+
+	<div id="bottom">
+			<p>Activites:</p>
+		<div class="textarea">
+			{% for value in (session['activities']) %}
+			<p class="{{ value['class'] }}">{{ value['activity'] }}</p>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+</html>
