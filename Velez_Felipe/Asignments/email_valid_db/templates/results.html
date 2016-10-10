@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results</title>
+</head>
+<body>
+	<div>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	</div>
+	<h1>These are all the emails</h1>
+	{% for email in all_emails: %}
+		<p> Email: {{email['email']}}, {{email['created_at']}}</p>
+		<form>	
+		<button type='submit' name = 'Delete' formaction= "/success/{{email['id']}}">Delete</button>
+		</form>
+		<hr>
+	{% endfor %}
+</body>
+</html>
