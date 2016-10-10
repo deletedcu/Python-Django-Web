@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Validate Me</title>
+    <style>
+      h1{
+        margin-bottom: 10px;
+      }
+      #wrapper{
+        width: 400px;
+        margin: 0 auto;
+      }
+      #wrapper form p{
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Validation Form</h1>
+      <form action="/validation" method="post">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <p>{{message}}</p>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <p>Enter First Name: <input type="text" name="first_name"></p>
+        <p>Enter Last Name: <input type="text" name="last_name"></p>
+        <p>Enter Birthdate: <input type="date" name="birthdate"></p>
+        <p>Enter Email Address: <input type="text" name="email"></p>
+        <p>Create a Password: <input type="password" name="pword"></p>
+        <p>Confirm Password: <input type="password" name="pword_conf"></p>
+        <button type="submit">submit</button>
+      </form>
+    </div>
+  </body>
+</html>
