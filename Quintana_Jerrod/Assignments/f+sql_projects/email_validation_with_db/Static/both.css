@@ -1,0 +1,38 @@
+.error{
+  margin-left: 200px;
+  background-color: red;
+  width: 450px;
+  height: 60px;
+  border: 3px solid black;
+  text-align: center;
+  padding-top: 20px;
+  color: white;
+}
+.input{
+  margin: 200px 0 0 200px;
+}
+.initial{
+  width: 400px;
+  height: 20px;
+  border: 2px solid black;
+}
+.button{
+  margin-top: 30px;
+  width: 100px;
+  height: 30px;
+  border: 2px solid black;
+  display: block;
+  margin-left: 380px;
+}
+.correct{
+  margin-left: 200px;
+  background-color: green;
+  width: 550px;
+  height: 100px;
+  border: 3px solid black;
+  text-align: center;
+  padding-top: 20px;
+}
+div{
+  margin-left: 150px;
+}
