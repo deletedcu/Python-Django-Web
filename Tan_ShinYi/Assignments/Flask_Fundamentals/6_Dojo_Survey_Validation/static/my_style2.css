@@ -1,0 +1,29 @@
+#info {
+  width:500px;
+  padding:15px;
+  margin: 30px auto;
+  background-color:lightgrey;
+  font-family: sans-serif;
+  position: relative;
+}
+
+h2{
+  text-decoration: underline;
+}
+
+td{
+  padding: 5px;
+}
+
+button{
+  padding:5px;
+  border:2px solid #ccc;
+  -webkit-border-radius: 5px;
+  background-color: black;
+  color:white;
+  border-radius: 5px;
+  display:block;
+  position:absolute;
+  bottom: 15px;
+  right:15px;
+}
