@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninjas</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ninjas.css') }}">
+    </head>
+    <body>
+        <img src = "{{ url_for('static', filename=whatever+'.jpg') }}">
+        <form  action="/ninja/blue">
+            <input type="submit" value="Blue" />
+        </form>
+        <form  action="/ninja/orange">
+            <input type="submit" value="Orange">
+        </form>
+        <form  action="/ninja/red">
+            <input type="submit" value="Red">
+        </form>
+        <form  action="/ninja/purple">
+            <input type="submit" value="Purple">
+        </form>
+    </body>
+</html>

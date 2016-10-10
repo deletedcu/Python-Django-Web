@@ -1,0 +1,10 @@
+*{
+    text-align: center;
+}
+img{
+    display: block;
+    margin: auto;
+}
+form{
+    display: inline-block;
+}
