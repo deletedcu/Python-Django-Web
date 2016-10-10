@@ -1,0 +1,10 @@
+﻿*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.block
+{
+    display:block;
+    color: green;
+}
