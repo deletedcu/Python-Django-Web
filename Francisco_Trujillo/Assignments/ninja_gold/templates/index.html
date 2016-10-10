@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<style media="screen">
+    h1{
+        text-align: center;
+
+    }
+    .score {
+        width: auto;
+
+    }
+    .score h3{
+        display: inline-block;
+    }
+    .num{
+    padding-left: 10px;
+    width: 100px;
+    border: 1px solid black;
+}
+.squares{
+
+    text-align: center;
+
+}
+.form{
+    width: 200px;
+    height: 150px;
+    margin: 0 10px;
+    display: inline-block;
+    border: 1px solid black;
+}
+.log{
+    width: 800px;
+    height: 100px;
+    border: 1px solid black;
+    overflow: auto;
+}
+button{
+    background-color: gold;
+}
+.green{
+    color = green;
+}
+
+.red{
+    color = red;
+}
+</style>
+        <title>Ninja Gold!</title>
+    </head>
+    <body>
+
+        <h1>Ninja Gold</h1>
+        <div class="score">
+            <h3>Your Gold:</h3>
+            <h3 class = "num">{{session['gold']}}</h3>
+        </div>
+        <div class="squares">
+            <form class="form" action="/process_money" method="post">
+                <h3>Farm</h3>
+                <p>(earns 10-20 golds)</p>
+                <input type="hidden" name="action" value="farm">
+                <button type="submit" name="button">Find Gold!</button>
+            </form>
+            <form class="form" action="/process_money" method="post">
+                <h3>Cave</h3>
+                <p>(earns 5-10 golds)</p>
+                <input type="hidden" name="action" value="cave">
+                <button type="submit" name="button">Find Gold!</button>
+            </form>
+            <form class="form" action="/process_money" method="post">
+                <h3>House</h3>
+                <p>(earns 2-5 golds)</p>
+                <input type="hidden" name="action" value="house">
+                <button type="submit" name="button">Find Gold!</button>
+            </form>
+            <form class="form" action="/process_money" method="post">
+                <h3>Casino</h3>
+                <p>(earns/takes 0-50 golds)</p>
+                <input type="hidden" name="action" value="casino">
+                <button type="submit" name="button">Find Gold!</button>
+            </form>
+        </div>
+        <h4>Activities:</h4>
+        <div class="log">
+            {%for message in session['message']:%}
+            <p>
+                {{message}}
+            </p>
+            {% endfor %}
+
+        </div>
+        <form class="" action="/reset" method="post">
+            <button type="submit" name="button"reset>Reset</button>
+        </form>
+    </body>
+</html>

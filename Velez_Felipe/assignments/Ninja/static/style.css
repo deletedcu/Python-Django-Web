@@ -1,0 +1,17 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.places{
+	height: 150px;
+	width: 500;
+	margin:10px;
+	display: inline-block;
+	border: 1px solid black;
+	text-align: center;
+}
+
+#activs{	
+	border: 1px solid black;
+}

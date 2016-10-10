@@ -22,7 +22,7 @@ def process():
     }
     if request.form['building'] in buildings:
         """ OMG What???"""
-        result = buildings[request.form['building']]
+        result = buildings[ request.form['building'] ]
         session['gold'] = session['gold']+result
         result_dictionary = {
                                 'class': ('red','green')[result > 0],

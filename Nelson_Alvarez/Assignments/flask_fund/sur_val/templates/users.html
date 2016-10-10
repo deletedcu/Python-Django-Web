@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='user.css') }}">
+    </head>
+    <body>
+            {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+        <h1>Submitted Info</h1>
+        <h3>Name:--:{{session['name']}}</h3>
+        <h3>Dojo Location:--:{{session['dojo_select']}}</h3>
+        <h3>Favorite Language:--:{{session['favorite_language']}}</h3>
+        <h3>Comment:--:{{session['comment']}}</h3>
+    </body>
+</html>

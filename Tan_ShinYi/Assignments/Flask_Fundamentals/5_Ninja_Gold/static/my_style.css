@@ -1,0 +1,61 @@
+*{
+  font-family: sans-serif;
+}
+
+h3{
+  display:inline-block;
+  margin: 10px 50px;
+}
+
+h4{
+  margin: 10px 50px;
+}
+
+#gold{
+  display:inline-block;
+  background-color: gold;
+  width: 200px;
+  margin-left: -40px;
+
+}
+
+#wrapper{
+  display:inline-block;
+  margin: 0px auto;
+}
+
+.location{
+  width: 250px;
+  height: 300px;
+  padding: 30px;
+  background-color: grey;
+  text-align: center;
+  display: inline-block;
+  margin: 0px 10px;
+}
+
+input[type="submit"]{
+  display:block;
+  width: 150px;
+  color:white;
+  font-size:20px;
+  background-color: black;
+  margin: 70px auto;
+
+}
+
+#activity{
+  margin: 10px 50px;
+  width: 500px;
+  height: 150px;
+  overflow:scroll;
+  border: 2px solid black;
+}
+
+.red{
+  color:red;
+}
+
+.green{
+  color:green;
+}

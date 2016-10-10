@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dojo.css')}}">
+  </head>
+  <body>
+    <div class="body">
+      <div class="wrapper">
+        <div>
+          <form class="/users" action="/result" method="post">
+            <div class='top'>
+              <h2>Your Name:</h2>
+              <input class="s1" type="text" name="name" value="">
+            </div>
+            <div class="top">
+              <h2>Dojo Location:</h2>
+              <select class="s2" name="location">
+                <option value="Dallas">Dallas</option>
+                <option value="San Franciso">San Franciso</option>
+              </select>
+            </div>
+            <div class="top">
+              <h2>Favorite Language:</h2>
+              <select class="s3" name="lang">
+                <option value="Python">Python</option>
+                <option value="HTML">HTML</option>
+                <option value="Javascript">Javascript</option>
+              </select>
+            <div>
+            <h2>Comment (optional):</h2>
+            <input class="text" type="text" name="comment" value="">
+            <input class="button" type="submit" name="button" value="Button">
+          <form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

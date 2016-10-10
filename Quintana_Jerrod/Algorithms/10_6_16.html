@@ -1,0 +1,53 @@
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  $(docuemnt).ready(function(){
+    function parensValid(str){
+        var open = 0;
+        var close = 0;
+        for (var i = 0; i < length; i++){
+          switch(str[i]){
+            case'(':
+              open+=1; break;
+            case ')':
+              close+=1; break;
+          }
+          if (close > open){ return false;}
+        }
+    };
+    function bracesValid(str){
+      var openpar = 0; var closepar = 0;
+      var opencurl=0; var closecurl=0;
+      var opensquare=0; var closesquare=0;
+      for (var i = 0; i < str.length; i++){
+        switch(str[i]){
+          case'(': openpar +=1; break;
+          case')': closepar +=1; break;
+          case'{': opencurl +=1; break;
+          case'}': closecurl +=1; break;
+          case'[': opensquare +=1; break;
+          case']': closesquare +=1; break;
+        }
+        if (openpar==closepar&& opencurl==closecurl&& opensquare==closesquare){
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+
+  });
+
+
+  $(function(){
+    // or here, pick one.
+  });
+  </script>
+</head>
+<body>
+
+</body>
+</html>
