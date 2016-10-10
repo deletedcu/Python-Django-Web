@@ -1,0 +1,56 @@
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+  *{
+    font-family: sans-serif;
+  }
+  .error_type1,.error_type2, .confirmation{
+    color:white;
+    display:inline-block;
+    padding:5px 10px;
+    margin: 5px;
+  }
+
+  .error_type1, .error_type2{
+    background-color: red;
+  }
+
+  .error_type1:after{
+    content: " cannot be empty!";
+  }
+
+  .confirmation{
+    background-color: green;
+  }
+
+
+  form ul li{
+    list-style-type: none;
+  }
+  </style>
+</head>
+<body>
+  <h1>Registration</h1>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul class=flashes>
+      {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  <form action='/process' method='POST'>
+    <ul>
+      <li>First Name:<input type="text" name="first_name" value="{{session['first_name']}}"></li>
+      <li>Last Name:<input type="text" name="last_name" value="{{session['last_name']}}"></li>
+      <li>Date of Birth:<input type="date" name="bday" value="{{session['bday']}}"></li>
+      <li>Email:<input type="text" name="email" value="{{session['email']}}"></li>
+      <li>Password:<input type="password" name="password"></li>
+      <li>Confirm Password:<input type="password" name="con_password"></li>
+    </ul>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

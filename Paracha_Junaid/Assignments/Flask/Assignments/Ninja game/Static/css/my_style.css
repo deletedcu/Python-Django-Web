@@ -1,0 +1,68 @@
+*{
+	border: none;
+	margin: none;
+	outline: none;
+	padding: none;
+}
+#wrapper {
+	margin: 0 auto;
+	width: 970px;
+	vertical-align: top;
+	padding: 20px;
+	/*text-align: center;*/
+}
+
+.your_gold {
+	width: 60px;
+	height: 20px;
+	border: 2px solid black;
+	display: inline-block;
+}
+.your_gold_text {
+	/*border: 2px solid black;*/
+	display: inline-block;
+	vertical-align: top;
+
+}
+form {
+	width: 200px;
+	height: 150px;
+	padding-right: 20px;
+	display: inline-block;
+	border: 2px solid black;
+	text-align: center;
+}
+
+.running_count {
+	width: 900px;
+	height: 100px;
+	border: 2px solid black;
+	overflow-y: scroll;
+
+
+}
+.red {
+	color: red;
+}
+.green{
+	color: green;
+}
+
+
+/*h1 {
+	color: blue;
+}
+input {
+	border: 2px solid black;
+	display: block;
+	padding: 2px;
+	margin: 10px 30px 10px 10px;
+
+}
+/*select {
+	border: 2px solid black;
+	margin: 10px 10px 10px 10px;
+	padding: 2px;
+	display: block;
+
+}*/

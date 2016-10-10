@@ -1,0 +1,33 @@
+*{
+	border: none;
+	margin: none;
+	outline: none;
+	padding: none;
+}
+#wrapper {
+	margin: 0 auto;
+	width: 970px;
+}
+h1 {
+	color: blue;
+}
+input {
+	border: 2px solid black;
+	display: block;
+	padding: 2px;
+	margin: 10px 30px 10px 10px;
+
+}
+select {
+	border: 2px solid black;
+	margin: 10px 10px 10px 10px;
+	padding: 2px;
+	display: block;
+
+}
+form {
+	border: 2px solid black;
+	width: 300px;
+	text-align: right;
+	font-size: 20px;
+}

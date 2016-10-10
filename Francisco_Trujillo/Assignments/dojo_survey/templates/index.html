@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Creat Dojo Survey</title>
+    </head>
+    <body>
+        <h1>Dojo Survey</h1>
+        <form class="form" action="/users" method="post">
+            Name: <input type="text" name="name" value="name">
+
+            <label for="location">Dojo Location
+                <select class="" name="location">
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Dallas">Dallas</option>
+                    <option value="Seattle">Seattle</option>
+                </select>
+            </label>
+            <label for="Language">Laguage</label>
+            <select class="Language" name="language" value="language">
+                <option value="Python">Python</option>
+                <option value="CSS">CSS</option>
+                <option value="HTML">HTML</option>
+                <option value="Javascript">Javascript</option>
+            </select>
+            <label for="comments" value="comments">Comments</label>
+            <textarea name="comments" rows="8" cols="40"></textarea>
+            <button type="submit" name="submit">Submit the form</button>
+        </form>
+    </body>
+</html>

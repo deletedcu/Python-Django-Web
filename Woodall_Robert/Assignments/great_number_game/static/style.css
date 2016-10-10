@@ -1,0 +1,37 @@
+*{
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+
+h3{
+	margin-bottom: 15px;
+}
+
+h4{
+	margin-bottom: 10px;
+}
+
+.incorrect, .correct{
+	margin: 0px auto 15px auto;
+	width: 250px;
+	height: 250px;
+	color: white;
+	font-weight: bold;
+}
+
+.incorrect{
+	background-color: red;
+}
+
+.correct{
+	background-color: green;
+}
+
+.show{ 
+	display: block; /* what is the opposite of none for display? */
+}
+
+.hide{
+	display: none;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/counter.css')}}">
+	<title></title>
+</head>
+<body>
+	<h1> counter</h1>
+	<p> {{count}} times.</p>
+	<form action ='/process' method = 'POST' >
+		<input type='submit' value = 'Ninja' />
+	</form>
+	<form action ='reset' method = 'GET' >
+		<input type='submit' value = 'RESET' />
+	</form>
+</body>
+</html>

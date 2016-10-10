@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dojo Survey Index</title>
+	<style type="text/css">
+		.error{
+			color: red;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<form id="wrapper" action="/survey" method="post">
+		<div>
+			<label>Your Name:</label>
+			<input type="text" name="name">
+		</div>
+		<div>
+			<label>Dojo Location:</label>
+			<select name='location'>
+				<option value='San Jose'>San Jose</option>
+				<option value='Dallas'>Dallas</option>
+				<option value='Mountain View'>Mountain View</option>
+			</select>
+		</div>
+		<div>
+			<label>Favorite Track:</label>
+			<select name='fav_track'>
+				<option value='Python'>Python</option>
+				<option value='Ruby on Rails'>Ruby on Rails</option>
+				<option value='MEAN'>MEAN</option>
+			</select>
+		</div>
+		<div>
+			<label>Comment (optional):</label>
+			<textarea name="comment"></textarea>
+		</div>
+		<input type="submit" value="submit survey">
+		{% with messages = get_flashed_messages() %} 
+			{% if messages %}
+				{% for message in messages %}
+					<p class="error">{{ message }}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+	</form>
+</body>
+</html>
+
