@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Money</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='my_style.css') }}">
+  </head>
+  <body>
+    <h3> Your Gold:</h3><div id="gold">{{session['gold']}}</div>
+    <div id="wrapper">
+      <form class="location" action="/process_money" method="post">
+        <h2>Farm</h2>
+        <p>(earns 10-20 golds)</p>
+        <input type="hidden" name="location" value="farm">
+        <input type="submit" value="Find Gold!">
+      </form>
+      <form class="location" action="/process_money" method="post">
+        <h2>Cave</h2>
+        <p>(earns 5-10 golds)</p>
+        <input type="hidden" name="location" value="cave">
+        <input type="submit" value="Find Gold!">
+      </form>
+      <form class="location" action="/process_money" method="post">
+        <h2>House</h2>
+        <p>(earns 2-5 golds)</p>
+        <input type="hidden" name="location" value="house">
+        <input type="submit" value="Find Gold!">
+      </form>
+      <form class="location" action="/process_money" method="post">
+        <h2>Casino</h2>
+        <p>(earns/takes 0-50 golds)</p>
+        <input type="hidden" name="location" value="casino">
+        <input type="submit" value="Find Gold!">
+        </form>
+    </div>
+
+    <h4>Activity:</h4>
+    <div id="activity">
+      {% for i in session['activities']: %}
+        {% if "Entered" in i:%}
+          <p class="red">{{i}}</p>
+        {% else: %}
+        <p class="green">{{i}}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </body>
+</html>
