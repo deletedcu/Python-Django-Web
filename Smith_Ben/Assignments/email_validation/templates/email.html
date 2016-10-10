@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success Page</title>
+</head>
+<body>
+	<h1>My list of Emails</h1>
+	{% for x in email %}
+	<p>E-mail: {{ x['email'] }} {{ x['created_at'] }}</p>
+	<form action="/delete/{{ x['id'] }}">
+		<input type='submit' value='delete' />
+	</form>
+	{% endfor %} 
+</body>
+
+
+
+
+</html>
