@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Form Test Show</title>
+  </head>
+  <body>
+    <h1>The email you entered ({{ session['added_email'] }}) is a Valid Email address! Thank you</h1>
+    <h2>These areh have been added eamils tha </h2>
+    <table>      
+      {% for val in users:%}
+      <tr>
+        <td>
+        {{  val['email']}}
+        </td>
+        <td>  
+        {{val['created_at'] }} 
+        </td>
+        <td>
+          <a href="/delete/{{ val['id']}}">Delete Me</a>
+        </td>
+      </tr>
+      {%endfor%}
+    </table>
+
+  </body>
+</html>
