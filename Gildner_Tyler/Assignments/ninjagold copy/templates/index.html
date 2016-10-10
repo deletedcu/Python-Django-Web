@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja_Gold!</title>
+        <style>
+            #textscroll{
+                height: 300px;
+                width: 700px;
+                overflow: scroll;
+                border: 1px solid black;
+            }
+
+            .location{
+                margin: 20px;
+                text-align: center;
+                display: inline-block;
+                border: 1px black solid;
+                width: 270px;
+                height:200px;
+            }
+            .green{
+                color: green;
+            }
+            .red{
+                color: red;
+            }
+            textarea{
+                height: 300px;
+                width: 700px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id='wrapper'>
+            <div id='yourgold'>
+                <span>Your Gold</span>
+                    <p>
+                        {{session['gold']}}
+                    </p>
+            </div>
+            <div class="location">
+                <h3>Farm</h3>
+                <p>
+                    (earns 10-20 gold)
+                </p>
+                <form class="goldbutton" action="/process" method="post">
+                    <input type="hidden" name='location' value='farm'/>
+                    <button type="submit" class='find' value='farm!'>Find Gold!</button>
+                </form>
+
+            </div>
+            <div class="location">
+                <h3>Cave</h3>
+                <p>
+                    (earns 5-10 gold)
+                </p>
+                <form class="goldbutton" action="/process" method="post">
+                    <input type="hidden" name='location' value='cave'/>
+                    <button type="submit" class='find' value='Cave!'>Find Gold!</button>
+                </form>
+            </div>
+            <div class="location">
+                <h3>House</h3>
+                <p>
+                    (earns 2-5 gold)
+                </p>
+                <form class="goldbutton" action="/process" method="post">
+                    <input type="hidden" name='location' value='house'/>
+                    <button type="submit" class='find' value='House!'>Find Gold!</button>
+                </form>
+            </div>
+            <div class="location">
+                <h3>Casino</h3>
+                <p>
+                    (lose 50 or earn 50 gold)
+                </p>
+                <form class="goldbutton" action="/process" method="post">
+                    <input type="hidden" name='location' value='casino'/>
+                    <button type="submit" class='find' value='Casino!'>Find Gold!</button>
+                </form>
+            </div>
+            <div id='activities'>
+                <h5>Activities:</h5>
+                <div id='textscroll'>
+                {% for value in (session['activities']):%}
+                <p class='{{value[  'class']}}'>{{ value['activity']}}</p>
+                {% endfor %}
+                </div>
+            </div>
+
+
+            </div>
+
+        </div>
+    </body>
+</html>

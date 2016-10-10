@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .green {
+        color: green;
+      }
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    {% for result_dictionary in session['activities']: %}
+    <p class="{{result_dictionary['class']}}">{{result_dictionary['activity']}}</p>
+    {% endfor %}
+    <form class="" action="/process" method="post">
+      <input type="hidden" name="building" value="farm">
+      <input type="submit" value="Farm!">
+    </form>
+    <form class="" action="/process" method="post">
+      <input type="hidden" name="building" value="casino">
+      <input type="submit" value="Gamble!">
+    </form>
+    <form class="" action="/process" method="post">
+      <input type="hidden" name="building" value="cave">
+      <input type="submit" value="Mine!">
+    </form>
+    <form class="" action="/process" method="post">
+      <input type="hidden" name="building" value="house">
+      <input type="submit" value="Housekeeping!">
+    </form>
+
+  </body>
+</html>

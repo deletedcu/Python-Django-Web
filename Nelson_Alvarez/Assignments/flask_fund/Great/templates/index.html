@@ -1,0 +1,50 @@
+<html>
+    <head>
+       <title>Great Number Game</title>
+       <style>
+        *{
+          text-align: center;
+        }
+        #wrapper p, form, h1{
+          text-align: center;
+        }
+         .green{
+          background-color: green;
+          width: 200px;
+          height: 200px;
+          border: solid 1px black;
+          margin: 0 auto;
+         }
+         .red{
+          background-color: red;
+          width: 200px;
+          height: 200px;
+          border: solid 1px black;
+          margin: 0 auto;
+         }
+         .hide{
+          display: none;
+         }
+       </style>
+    </head>
+    <body>
+      <div id="wrapper">
+        <div id='welcome'>
+          <h1>Welcome to the Great Number Game!</h1>
+          <p>I am thinking of a number between 1 and 100</p>
+          <p>Take a guess!</p>
+        </div>
+        <div class='{{session['wrong']}}'>
+          <h1>{{session['try']}}</h1>
+          <form action='/reset_game' method='post'>
+            <button class={{session['hide']}} type='submit'>{{session['butt']}}</button>
+          </form>
+        </div>
+        <form class="" action="/guess" method="post">
+          <input type="text" name='guess'/>
+          <button type="submit">Submit</button>
+        </form>
+        </div>
+      </div>
+    </body>
+</html>

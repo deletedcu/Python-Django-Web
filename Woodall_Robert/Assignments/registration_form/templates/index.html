@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<style type="text/css">
+		.error{
+			color: red;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+    <form action="/process" method='POST'>
+        <div>
+	        <label>Email:</label>
+	        <input type="text" name="email">
+	    </div>
+	    <div>
+	        <label>First Name:</label>
+	        <input type="text" name="fname">
+	    </div>
+	    <div>
+	        <label>Last Name:</label>
+	        <input type="text" name="lname">
+	    </div>
+	    <div>
+	        <label>Password:</label>
+	        <input type="text" name="pw">
+	    </div>
+	    <div>
+	        <label>Confirm Password:</label>
+	        <input type="text" name="confirm_pw">
+	    </div>
+	    <input type="submit" name="Submit">
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p class="error">{{message}}</p>
+          {% endfor %}
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

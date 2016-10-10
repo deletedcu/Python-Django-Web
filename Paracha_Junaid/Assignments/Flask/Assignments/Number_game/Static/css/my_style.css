@@ -1,0 +1,61 @@
+*{
+	border: none;
+	margin: none;
+	outline: none;
+	padding: none;
+}
+#wrapper {
+	margin: 0 auto;
+	width: 970px;
+	text-align: center;
+}
+h1 {
+	color: blue;
+}
+input {
+	border: 2px solid black;
+	display: block;
+	padding: 2px;
+	margin: 10px 30px 10px 10px;
+
+}
+/*select {
+	border: 2px solid black;
+	margin: 10px 10px 10px 10px;
+	padding: 2px;
+	display: block;
+
+}*/
+form {
+	/*border: 2px solid black;*/
+	width: 300px;
+	text-align: right;
+	font-size: 20px;
+	margin: 10px 10px 10px 400px;
+	padding-right: 20px;
+}
+.red{
+	background-color: red;
+	width: 300px;
+	height: 100px;
+	margin: 0 auto;
+	text-align: top;
+	/*padding: 50px;*/
+	font-size: 30px;
+
+}
+.green{
+	background-color: green;
+	width: 300px;
+	height: 100px;
+	margin: 0 auto;
+	text-align: top;
+	/*padding: 50px*/
+	font-size: 30px;
+}
+.submit {
+	margin-left: 80px;
+}
+.again {
+	margin-top: -50px;
+}

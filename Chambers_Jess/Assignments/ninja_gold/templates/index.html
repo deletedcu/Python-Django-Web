@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Gold</title>
+    <style>
+        #wrapper {
+            width: 970px;
+            margin: auto;
+            font: verdana;
+        }
+
+        #activity_box {
+            width: 500;
+            height: 200px;
+            display: block;
+            border: 1px solid grey;
+            padding: 10px;
+            text-align: center;
+            font: verdana;
+            overflow: scroll;
+        }
+
+        h1 {
+            margin: auto;
+            text-align: center;
+            color: gold;
+        }
+
+        .location {
+            width: 170px;
+            margin: 10px;
+            text-align: center;
+            display: inline-block;
+            border: 1px solid gold;
+            padding: 20px;
+
+        }
+
+        .red {
+            color: red;
+        }
+        .green{
+            color: green;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+        <div id="yourgold">
+            <h1> Ninja Gold</h1>
+            <p>Your Gold:  {{ session['gold'] }}</p>
+        </div>
+        <div class='location'>
+            <h3>Farm</h3>
+            <p>
+                (earns 10-20 golds)
+            </p>
+            <form class="goldbutton" action="/process" method="post">
+                <input type="hidden" name="building" value="farm">
+                <button type="submit" class='find' value="Farm">Find Gold</button>
+            </form>
+        </div>
+        <div class='location'>
+            <h3>Cave</h3>
+            <p>
+                (earns 5-10 golds)
+            </p>
+            <form class="goldbutton" action="/process" method="post">
+                <input type="hidden" name="building" value="cave">
+                <button type="submit" class='find' value="Cave">Find Gold</button>
+            </form>
+        </div>
+        <div class='location'>
+            <h3>House</h3>
+            <p>
+                (earns 2-5 golds)
+            </p>
+            <form class="goldbutton" action="/process" method="post">
+                <input type="hidden" name="building" value="house">
+                <button type="submit" class='find' value="House">Find Gold</button>
+            </form>
+        </div>
+        <div class='location'>
+            <h3>Casino</h3>
+            <p>
+                (earns/takes 0-50 golds)
+            </p>
+            <form class="goldbutton" action="/process" method="post">
+                <input type="hidden" name="building" value="casino">
+                <button type="submit" class='find' value="Casino">Find Gold</button>
+            </form>
+        </div>
+        <h3>So far....</h3>
+        <div id="activity_box">
+            {% for value in (session['activities']):%}
+            <p class='{{value['class']}}'> {{ value['activity'] }}</p>
+            {% endfor %}
+        </div>
+
+    </div>
+  </body>
+</html>

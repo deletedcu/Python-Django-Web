@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Great Number Game</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='gng.css') }}">
+</head>
+<body>
+	<h1>Welcome to the Great Number Game!</h1>
+	<h3>I am thinking of a number between 1 and 100</h3>
+	<h3> Take a guess!</h3>
+	<div class="{{session['formatplay']}}">
+		<h3>{{session['feedback']}}</h3>
+		<form class= "{{session['hidebutton']}}" action="/reset" method='post'>
+			<button type="submit">Try Again</button>
+		</form>
+	</div>
+	<form class= "{{session['format']}}" action ="/process" method= "post">
+		<input type="number" name='player_guess'>
+		<input type='submit' value='submit'>
+	</form>
+
+	<form class= "{{session['formatclear']}}" action="/reset" method="post">
+		<button type="submit" >reset</button>
+	</form>
+
+</body>
+</html>

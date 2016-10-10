@@ -1,0 +1,34 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.wrapper{
+  margin: 50px;
+  width: 800px;
+  height: 500px;
+  border: 5px solid black;
+  padding: 25px;
+}
+h3{
+  margin: 10px 20px;
+}
+div{
+  display: inline-block;
+}
+.answer{
+  margin-left: 100px;
+}
+button{
+  display: block;
+  margin: 295px 0 0 683px;
+  border: 2px solid black;
+  color: white;
+  width: 70px;
+  height: 25px;
+  vertical-align: middle;
+  background-color: lightblue;
+  box-shadow: 1px 1px 0px 1px black;
+}
+a{
+  text-decoration: none;
+}

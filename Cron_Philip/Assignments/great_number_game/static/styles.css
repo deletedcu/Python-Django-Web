@@ -1,0 +1,21 @@
+* {
+    text-align: center;
+}
+.boxStyle {
+    width: 250px;
+    height: 150px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+.guess {
+    background-color: red;
+}
+.correct {
+    background-color: green;
+}
+.show {
+   display: block; 
+}
+.hide {
+    display: none;
+}

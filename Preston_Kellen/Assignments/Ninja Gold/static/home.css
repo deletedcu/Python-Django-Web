@@ -1,0 +1,91 @@
+#wrapper {
+  margin: 0 auto;
+  width: 860px;
+  background-color: lightgrey;
+  border: solid black 1px;
+}
+#gold-count {
+  width: 760px;
+  height: 50px;
+  display: inline-block;
+  vertical-align: top;
+}
+#container {
+  width: 828px;
+  height: 180px;
+  display: inline-block;
+  padding: 16px;
+}
+.actions {
+  width: 198px;
+  height: 178px;
+  margin-right: 4px;
+  background-color: white;
+  display: inline-block;
+  border: solid black 1px;
+}
+.actions h3, .actions p {
+  text-align: center;
+  padding-bottom: 10px;
+}
+button {
+  margin-left: 65px;
+  background-color: lightgrey;
+  border-radius: 5px;
+  border: solid black 1px;
+}
+#activities {
+  width: 860px;
+  height: 140px;
+  display: inline-block;
+}
+#gold-tracker {
+  border: solid black 2px;
+  height: 20px;
+  width: 130px;
+  margin-top: 8px;
+  padding: 5px 10px;
+  background-color: white;
+  display: inline-block;
+  vertical-align: top;
+}
+.inline-block {
+  display: inline-block;
+  padding-left: 18px;
+  padding-right: 20px;
+  vertical-align: top;
+}
+.log {
+  display: inline-block;
+  width: 720px;
+  height: 100px;
+  padding: 0 5px;
+  border: solid black 1px;
+  background-color: white;
+  overflow-y: scroll;
+}
+span {
+  display: block;
+}
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+#reset {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+  background-color: white;
+  margin-left: 0px;
+}
+#reset_game {
+  display: inline-block;
+  width: 80px;
+  height: 50px;
+}
+#top-container {
+  width: 860px;
+  height: 50px;
+}

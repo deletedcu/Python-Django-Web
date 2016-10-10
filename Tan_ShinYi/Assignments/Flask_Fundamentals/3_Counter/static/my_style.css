@@ -1,0 +1,16 @@
+h1, h4 {
+  margin: 50px auto;
+  font-family: sans-serif;
+  width: 500px;
+  text-align: center;
+}
+
+input[value="I am a ninja!"]{
+  background-color: black;
+  color:white;
+}
+
+input[value="I am a hacker!"]{
+  background-color: grey;
+  color:white;
+}
