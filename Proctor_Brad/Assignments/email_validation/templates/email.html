@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Success Page</title>
+    </head>
+    <body>
+        <h1>These are all the emails</h1>
+        {% for x in email %}
+          <p>Email: {{x['email']}} {{x['created_at']}}<form action="/delete/{{ x['id'] }}">
+              <input type="submit" value="DELETE">
+          </form></p>
+        {% endfor %}
+        <hr>
+    </body>
+</html>
