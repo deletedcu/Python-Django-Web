@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #wrapper{
+        margin: 0 auto;
+        width: 600px;
+      }
+      #wrapper h1, h2, p, form{
+        text-align: center;
+      }
+      h2 {
+        margin-top: 80px;
+        color: white;
+        font-family: sans-serif;
+      }
+      .red {
+        background-color: red;
+        border: solid 1px black;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+      }
+      .green {
+        background-color: green;
+        border: solid 1px black;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+      }
+      .hide{
+        display:none;
+      }
+      .show{
+        border-radius: 5px;
+        padding: 5px, 15px;
+        border: solid black 1px;
+      }
+      button{
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="top_text">
+        <h1>Welcome to the Great Number Game!</h1>
+        <p>I a thinking of a number between 1 and 100</p>
+        <p>Take a guess!</p>
+      </div>
+      <div class={{session['wrong']}}>
+        <h2>{{session['try']}}</h2>
+        <form action="/reset_game" method="post">
+          <button class={{session['unhide']}} type="submit">{{session['butt']}}</button>
+        </form>
+      </div>
+      <form class="" action="/guess" method="post">
+        <input type="text" name="guess">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
