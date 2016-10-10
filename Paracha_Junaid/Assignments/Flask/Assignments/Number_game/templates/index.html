@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="Junaid_page" content="Discription">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+
+<body>
+	<div id="wrapper">		
+	<h1>Welcome to the Great Number Game!</h1>
+	<h2>I am thinking of a number between 1 and 100</h2>
+	<p class="{{ session['x']['class']}}"> {{ session['x']['content']}} 
+	<form action="/again">
+		<input class='again' type="{{ session['x']['type']}}" value="Try Again">
+	</form>
+	</p>
+	<form action="/guess" method="POST">
+		<input type="input" name="user_guess">
+		<input class='submit' type="submit" value="submit">
+	</form>
+
+
+</body>
+</html>
