@@ -41,6 +41,14 @@ def success():
 
         return redirect('/')
 
+@app.route("/delete/<email>")
+def delete(email):
+    query = "DELETE FROM users WHERE email = :emailplaceholder"
+    data = {'emailplaceholder': email}
+    mysql.query_db(query, data)
+    flash('You successfully deleted your email!')
+    emails = mysql.query_db('select email, created_at from users')
+    return render_template('success.html', all_emails=emails)
 
 app.run(debug=True)
 
