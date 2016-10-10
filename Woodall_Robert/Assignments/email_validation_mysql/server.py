@@ -29,8 +29,23 @@ def process():
 	
 	# retrieve all emails and pass to success page
 	emails = mysql.query_db('select email, created_at from user_email')
-	flash('Valid email address entered...thanks!', 'success')
+	flash('Valid email address entered (' + emails[len(emails) - 1]['email'] + ')...thanks!', 'success')
 	
 	return render_template('success.html', all_emails=emails)
+
+@app.route('/delete/<email>')
+def delete(email):
+	# remove record from db
+	query = "DELETE FROM user_email WHERE email = :email"
+	data = {'email': email}
+	mysql.query_db(query, data)
+
+	flash('Email successfully removed!', 'success')
+	
+	# retrieve all emails and pass to success page
+	emails = mysql.query_db('select email, created_at from user_email')
+
+	return render_template('success.html', all_emails=emails)
+	
 
 app.run(debug=True)

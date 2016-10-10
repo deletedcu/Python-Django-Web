@@ -28,7 +28,7 @@
 	{% endwith %}
 	<h3>Available Emails:</h3>
 	{% for email in all_emails %}
-		<p>{{ email['email'] }} <span>({{ email['created_at'] }})</span></p>
+		<p>{{ email['email'] }} <span>({{ email['created_at'] }})</span> <a href="/delete/{{ email['email'] }}">delete record</a></p>
     {% endfor %}
 </body>
 </html>
