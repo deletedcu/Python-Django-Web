@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success Page</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p class="error">{{message}}</p>
+          {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h3>Available Emails:<h3>
+    {% for email in all_emails %}
+        <p>{{ email['email']}} <span>({{ email['created_at'] }})</span></p>
+    {% endfor %}
+</body>
+</html>
