@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style> 
+
+      .green{
+        color: green;
+      }
+      .red{
+        color: red;
+      }
+      .building{
+        margin: 20px;
+        text-align: center;
+        display: inline-block;
+        border: 1px solid black;
+        width: 270px;
+        height: 200px;
+      }
+       *{
+          text-align: center;
+        }
+        #wrapper p, form, h1{
+          text-align: center;
+        }
+         .hide{
+          display: none;
+         }
+         #textscroll{
+          height: 300px;
+          width: 700px;
+          overflow: scroll;
+          border: 1px solid black;
+          margin: 0 auto;
+         }
+    </style>
+  </head>
+  <body>
+    <h1>Ninja GOLD!</h1>
+    <p>Your Gold: {{(session['gold'])}}</p>
+    <div class = 'building'>
+      <h3>Farm</h3>
+      <p>(earns 10-20 golds)</p>
+       <form class="goldbutton" action="/process" method="post">
+          <input type="hidden" name="building" value="farm">
+          <button type="submit" class='find' value='Farm!'>Find Gold</button>
+        </form>
+    </div>
+    <div class = 'building'>
+      <h3>Cave</h3>
+      <p>(earns 5-10 golds)</p>
+       <form class="goldbutton" action="/process" method="post">
+          <input type="hidden" name="building" value="cave">
+          <button type="submit" class='find' value='Cave!'>Find Gold</button>
+        </form>
+    </div>
+    <div class = 'building'>
+      <h3>House</h3>
+      <p>(earns 2-5 golds)</p>
+       <form class="goldbutton" action="/process" method="post">
+          <input type="hidden" name="building" value="house">
+          <button type="submit" class='find' value='House!'>Find Gold</button>
+        </form>
+    </div>
+    <div class = 'building'>
+      <h3>Casino</h3>
+      <p>(earns 5-10 golds)</p>
+       <form class="goldbutton" action="/process" method="post">
+          <input type="hidden" name="building" value="casino">
+          <button type="submit" class='find' value='Casino!'>Find Gold</button>
+        </form>
+    </div>
+    <div id='textscroll'>
+     {% for x in (session['activities']):%}
+      <p class="{{x['class']}}">{{x['activity']}}</p>
+      {% endfor %}
+    </div>
+  </body>
+</html>
