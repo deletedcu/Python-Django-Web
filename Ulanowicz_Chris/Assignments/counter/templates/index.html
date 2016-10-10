@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counter</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}" />
+</head>
+<body>
+	<div id="container">
+		<h1>Counter</h1>
+		<h3>{{ session['count'] }} times.</h3>
+		<form action="/ninjas" method="POST">
+			<input type="submit" value="Stealth" />
+		</form>
+		<form action="/reset" method="POST">
+			<input type="submit" value="Reset" />
+		</form>
+	</div>
+</body>
+</html>

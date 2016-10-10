@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Users</title>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{message}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <h1>Information:</h1>
+    <h3>{{session['name']}}</h3>
+    <h3>{{session['dojo']}}</h3>
+    <h3>{{session['language']}}</h3>
+    <h3>{{session['comment']}}</h3>
+  </body>
+</html>

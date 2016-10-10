@@ -1,0 +1,20 @@
+#container {
+	font-family: "roboto", sans-serif;
+	width: 80%;
+}
+h1,h3 {
+	text-align: center;
+}
+
+h1 {
+	margin-top: 80px;
+}
+
+h3 {
+	margin-top: 40px;
+}
+
+form {
+	text-align: center;
+	margin-bottom: 20px;
+}

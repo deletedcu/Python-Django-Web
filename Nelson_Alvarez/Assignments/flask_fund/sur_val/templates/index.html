@@ -1,0 +1,36 @@
+<html>
+    <head>
+       <title></title>
+    </head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+
+    <body>
+        <h1>Dojo Survey</h1>
+            {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <form action='/users' method='post'>
+          Name: <input id='name' type='text' name='name'>
+          Favorite Language: <select id ='favelang' name='favorite_language'>
+              <option value="{{ 'PYTHON' }}">{{ 'PYTHON' }}</option>
+              <option value="{{ 'RUBY' }}">{{ 'RUBY' }}</option>
+              <option value="{{ 'JAVASCRIPT' }}">{{ 'JAVASCRIPT' }}</option>
+              <option value="{{ 'PHP' }}">{{ 'PHP' }}</option></select>
+
+
+
+          Dojo Location: <select id='dojo' name="dojo_select" class="selectpicker form-control">
+              <option value="{{ 'DALLAS' }}">{{ 'DALLAS' }}</option>
+              <option value="{{ 'SAN JOSE' }}">{{ 'SAN JOSE' }}</option>
+              <option value="{{ 'SEATTLE' }}">{{ 'SEATTLE' }}</option>
+              <option value="{{ 'CHICAGO' }}">{{ 'CHICAGO' }}</option>
+              <option value="{{ 'SAN FRANCISCO' }}">{{ 'SAN FRANCISCO' }}</option></select>
+          Comment: <input name ='comment' id ='comment' type='text' name='comment'>
+          <input type='submit' value='SUBMIT INFO'>
+      </form>
+    </body>
+</html>

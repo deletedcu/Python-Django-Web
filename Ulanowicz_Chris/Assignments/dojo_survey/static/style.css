@@ -1,0 +1,29 @@
+#container {
+	width: 75%;
+	margin: 0px auto;
+}
+
+fieldset {
+	width: 50%;
+	margin: 0px auto;
+	padding: 20px;
+}
+
+label {
+	display: block;
+	margin-top: 20px;
+}
+
+h2 {
+	text-decoration: underline;
+}
+
+a {
+	background-color: lightblue;
+	border-radius: 5px;
+	padding: 17px 7px;
+	color: white;
+	/*display: block;*/
+	margin-left: 400px;
+	text-decoration: none;
+}

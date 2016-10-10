@@ -8,9 +8,9 @@ app.secret_key = 'my_secret_key'
 def index():
     if not 'gold' in session:
         session['gold'] = 0
-    if not 'activities' in session:
-        session['activities'] = []
-    return render_template('index.html')
+    # if not 'activities' in session:
+    #     session['activities'] = []
+    # return render_template('index.html')
 
 @app.route('/process', methods = ['POST'])
 def process():
@@ -28,8 +28,7 @@ def process():
                                 'class': ('red','green')[result > 0],
                                 'activity': "You went to the {} and {} {} gold!".format(request.form['building'], ('lost','gained')[result > 0], result)
                             }
-        session['activities'].append(result_dictionary)
-    return redirect('/')
+        
 
 
 if __name__ == '__main__':

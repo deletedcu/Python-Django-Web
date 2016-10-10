@@ -1,0 +1,21 @@
+*{
+    display: block;
+    width: 500px;
+}
+input{
+    margin: 10px;
+    height: 20px;
+    width:200px;
+}
+#dojo{
+    width:250;
+    margin: 20px;
+}
+#comment{
+    width:250px;
+    height:50px;
+}
+#favelang{
+    width:250px;
+    margin: 20px;
+}

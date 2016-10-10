@@ -1,0 +1,13 @@
+*{
+	border: none;
+	margin: none;
+	outline: none;
+	padding: none;
+}
+#wrapper {
+	margin: 0 auto;
+	width: 970px;
+}
+h1 {
+	color: blue;
+}

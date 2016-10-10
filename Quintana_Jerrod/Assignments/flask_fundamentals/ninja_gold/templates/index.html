@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Gold</title>
+    <meta name="description" content="ninja gold">
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}" media="screen" title="no title">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <h4>Your Gold:</h4>
+        <h4 class="gold">{{gold}}</h4>
+      </div>
+      <div class="body">
+        <div class="boxes">
+          <h2>Farm</h2><h4>(earns 10-20 gold)</h4>
+          <form class="" action="/process_money" method="post">
+            <input type="hidden" name="building" value="farm">
+            <input class="button" type="submit" name='building' value="Find Gold!">
+          </form>
+        </div>
+          <div class="boxes">
+            <h2>Cave</h2><h4>(earns 5-10 gold)</h4>
+            <form class="" action="/process_money" method="post">
+              <input type="hidden" name="building" value="cave">
+              <input class="button" type="submit" value="Find Gold!">
+            </form>
+          </div>
+          <div class="boxes">
+            <h2>House</h2><h4>(earns 2-5 gold)</h4>
+            <form class="" action="/process_money" method="post">
+              <input type="hidden" name="building" value="house">
+              <input class="button" type="submit" value="Find Gold!">
+            </form>
+          </div>
+          <div class="boxes">
+            <h2>Casino</h2><h4>(earns/takes 0-50 gold)</h4>
+            <form class="" action="/process_money" method="post">
+              <input type="hidden" name="building" value="casino">
+              <input class="button" type="submit" value="Find Gold!">
+            </form>
+          </div>
+      </div>
+      <div class="footer">
+        <h4>Activities:</h4>
+        <div class="text">
+        {% for k,v in (session['activities']).items(): %}
+        {% if v =='green':%}
+          <h5 class="green">{{k}}<h5>
+        {% else: %}
+          <h5 class="red">{{k}}<h5>
+        {%endif%}
+        {%endfor%}
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
