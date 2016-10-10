@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Braces Valid</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    // Given a sequence of parentheses, braces, and brackets, determine whether it is valid.
+    // Ex: "W(a{t}s[o(n{ c}o)m]e ) h[e{r}e]!" is true and
+    // "D(i{a}l[ t]o)n{e" is false and "A(1)s[O(n]0 {t} 0}k" is false
+
+    function bracesValid(str){
+      var parenCount=0;
+      var bracketCount=0;
+      var braceCount=0;
+      for(var i=0; i<str.length;i++){
+        switch(str[i]){
+          case '(': parenCount++; break;
+          case')': parenCount--; break;
+          case '[': bracketCount++; break;
+          case']': bracketCount--; break;
+          case '{': braceCount++; break;
+          case'}': braceCount--; break;
+        }
+        if (parenCount<0||bracketCount<0||braceCount<0){
+          return false;
+        }
+      }
+      if(parenCount!=0|| bracketCount!=0|| braceCount!=0){
+        return false;
+      }
+      return true;
+    }
+    //Test case below:
+    console.log(bracesValid("W(a{t}s[o(n{ c}o)m]e ) h[e{r}e]!"));
+    console.log(bracesValid("A(1)s[O(n]0 {t} 0}k"));
+
+
+  });
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Parentheses Valid</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    // Create a function that, given an input string str, returns a boolean whether parentheses
+    // are in str are valid. Valid sets of parentheses always open before they close, for example... "Y(3(p)p(3)r)s"
+    // return true and "N(0(p)3" returns false.
+
+    function parensValid(str){
+      var open=0;
+      var close=0;
+      for(var i=0; i<str.length;i++){
+        switch(str[i]){
+          case '(': open++; break;
+          case')': close++; break;
+        }
+        if (close>open){
+          return false;
+        }
+      }
+      if(close==open){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+
+    //Test case below:
+    console.log(parensValid("N(0(p)3"));
+    console.log(parensValid("Y(3(p)p(3)r)s"));
+
+
+  });
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

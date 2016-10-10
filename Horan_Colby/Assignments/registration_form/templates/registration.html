@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<style>
+		#registration {
+			border-style: solid;
+			border-width: 1px;
+			width: 200px;
+			height: auto;
+			padding: 30 0 0 30px;
+			margin: 20px 0 0 20px;
+			background-color: lightgrey;
+		}
+		#registration input{
+			display: block;
+			margin-bottom: 5px;
+		}
+		#registration form{
+			margin: 20px 0 0 30px;
+		}
+		#registration h3{
+			text-align: center;
+			border-bottom-style: solid;
+			border-bottom-width: 1px;
+			padding-bottom: 20px;
+		}
+		.error{
+			font-weight: bold;
+			color: red;
+			padding: 0 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="registration">
+		<h3>Registration</h3>
+		<form name="registration" method="post" action="/process">
+			<input type="hidden" name="info">
+			Email: <input type="text" name="email">
+			First Name: <input type="text" name="first">
+			Last Name: <input type="text" name="last">
+			Password: <input type="password" name="password">
+			Confirm: <input type="password" name="confirm">
+			<input type="submit" name="submit">
+		</form>
+		<div class="error">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<p>{{ message }}</p>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+		</div>
+	</div>
+</body>
+</html>
