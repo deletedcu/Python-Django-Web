@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Great Number Game</title>
+        <link rel="stylesheet" type="css/text" href="{{ url_for('static', filename='style.css') }}" media="screen" title="style" >
+        <style media="screen">
+            * {
+                text-align: center;
+            }
+            .incorrect {
+
+                background: red;
+            }
+            .hide{
+                display: none;
+
+            }
+            .show{
+                align-items: center;
+                margin: 0 auto 1% auto;
+                width: 200px;
+                height: 100px;
+                color: #fff;
+                display: block
+
+            }
+            .correct{
+                background: green;
+
+            }
+            .reset button{
+                margin-top: 20px;
+            }
+
+
+        </style>
+    </head>
+        <body>
+            <div>
+
+                <div class="header">
+                    <h1>Welcome to the Great Number Game!</h1>
+                    <h2>I am thinking of a number between 1 - 100</h2>
+                    <h3>Take a guess</h3>
+                </div>
+                <div class="{{session['format']}}" >
+                    <h3>{{session['feedback']}}</h3>
+                     </form>
+                <form class="{{session['formatw']}}" action="/reset" method="post">
+                <button>Play Again!!!</button>
+                </form>
+
+                </div>
+
+
+                <form class="{{session['form']}}" action="/sub" method="post">
+                    <input type="number" name="number" value="number">
+                    <button type="submit" name="button">Submit</button>
+
+                </form>
+                <form class="reset" action="/reset" method="post">
+                <button>Reset</button>
+                </form>
+        </div>
+    </body>
+</html>
