@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+       .warning{
+           padding-top: 20px
+           
+           width: 200px;
+           height: 50px;
+           background: green;
+           font-size: 14pt;
+           color: white;
+       }
+       .warning p{
+           padding-top: 10px;
+           text-align: center;
+       }
+    
+    
+    </style>
+    <meta charset="UTF-8">
+    <title>Email Results</title>
+</head>
+<body>
+    <div class="warning">
+  {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    </div>
+    <div>
+        <h3>Registered Email</h3>
+        {% for email in emails %}
+            <p>{{ email['email']}} - {{email['created_at']}}</p><a href="/remove/{{email['id']}}">Delete Email</a>
+            
+        {% endfor %}
+    </div>
+</body>
+</html>
