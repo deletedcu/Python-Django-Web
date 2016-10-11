@@ -1,0 +1,27 @@
+﻿*{
+    padding:0px;
+    margin:0px;
+    text-align:center;
+}
+
+p .inline
+{
+    display: inline-block
+}
+
+input .inline
+{
+    display: inline-block
+}
+
+.congrats
+{
+
+    background-color:green;
+
+}
+
+.fail
+{
+    background-color:red;
+}

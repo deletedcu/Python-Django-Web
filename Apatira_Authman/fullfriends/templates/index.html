@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}" />
+</head>
+<body>
+    <h1>Friends in Database:</h1>
+    <hr />
+    <br />
+        {% for record in friendsList %}
+            <p class="inline">{{record['first_name']}} {{record['last_name']}} {{record['occupation']}} {{record['first_name']}}</p>
+            <form action="friends/{{record['id']}}/edit" method="get"><input class="inline" type="submit" name="edit" value="Edit" /></form><form action="/delete/{{record['id']}}" method="post"><input class="inline" type="submit" name="delete" value="Delete" /></form>
+        {% endfor%}
+
+    <form action="/process" method="post">
+        <label>First Name: </label><input type="text" name="first_name" value="" />
+        <label>Last Name: </label><input type="text" name="last_name" value="" />
+        <label>Occupation: </label><input type="text" name="occupation" value="" />
+        <input type="submit" name="subbtn" value="Add New Friend" />
+    </form>
+</body>
+</html>
