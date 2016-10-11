@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="Junaid_page" content="Discription">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+
+<body>
+	<div id="wrapper">
+		<form action='/show' method='post'>
+			User Account <select name="login_user">
+				{% for val in login_user:%}
+				<option value="{{ val['id']}}">{{  val['first_name']}}</option>
+				{% endfor %}
+			</select>
+			<input type="submit" value="get user">
+		</form>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<p>{{message}}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+	    <h2>Here is a list of your friends </h2>
+		<form action="/friend" method="POST">
+			Email: <input type="text" name="email">
+			<br>
+			First Name: <input type="text" name="first_name">
+			<br>
+			Last Name: <input type="text" name="last_name">
+			<br>
+			<input type="submit" value="Add Friend">								
+		</form>
+	    <table>      
+	      <tr>
+	      	<td> First Name</td>
+	      	<td> Last Name</td>
+	      	<td> User Name</td>
+	      	<td> User Created Date</td>
+	      	<td> Action</td>
+	      </tr>
+	      {% for val in session['users_info']:%}
+	      <tr>
+	      	<td>
+	        {{  val['First_Name']}}
+	        </td>
+	        <td>
+	        {{  val['Last_Name']}}
+	        </td>
+	        <td>
+	        {{  val['User_Name']}}
+	        </td>
+	        <td>  
+	        {{val['created_at'] }} 
+	        </td>
+	        <td>
+	          <a href="/{{ val['id']}}/edit">Edit</a>
+	        </td>
+	      </tr>
+	      {%endfor%}
+	    </table>
+	</div>
+</body>
+</html>
