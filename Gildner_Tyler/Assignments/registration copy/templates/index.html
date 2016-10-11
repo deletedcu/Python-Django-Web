@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style></style>
+    </head>
+    <body>
+        <h1>Registration, bud</h1>
+                    {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul class=flashes>
+                {% for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+            {% block body %}{% endblock %}
+        <form action="/process" method="post">
+            EMAIL:<input type="" name="{{'email'}}">
+            FIRST NAME:<input type="text" name="{{'first_name'}}">
+            LAST NAME<input type="text" name="last_name">
+            PASSWORD:<input type="password" name="password" value="password">
+            CONFIRM PASSWORD:<input type="password" name="confirm_password" value="password">
+            <input type="submit" name="registration" value='SUBMIT'/>
+        </form>
+    </body>
+</html>
