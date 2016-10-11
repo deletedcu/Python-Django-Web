@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Display Friends</title>
+    <style>
+      li {
+        list-style-type: none;
+        padding-bottom: 5px;
+      }
+      button {
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Your Friends</h1>
+        <ul>
+          {% for friend in all_friends %}
+            <li>First Name: {{friend['first_name']}} Last Name: {{friend['last_name']}} Email: {{friend['email']}} Created at: {{friend['created_at']}}</li>
+            <form action="/friends/{{friend['id']}}/edit">
+              <button type="submit" name="edit_friend">Edit Friend</button>
+            </form>
+            <form action="/friends/{{friend['id']}}/delete" method="post">
+              <button type="submit" name="delete_friend">Delete Friend</button>
+            </form>
+          {% endfor %}
+        </ul>
+      <form action="/friends" method="post">
+        First Name: <input type="text" name="first_name" placeholder="first_name">
+        Last Name: <input type="text" name="last_name" placeholder="last_name">
+        Email Address: <input type="text" name="email" placeholder="email">
+        <button type="submit" name="new_friend">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
