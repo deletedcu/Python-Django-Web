@@ -1,0 +1,56 @@
+<html>
+    <head>
+       <title>Full Friends</title>
+    </head>
+    <style>
+    span {
+            border: 1px solid grey;
+            padding: 5px;
+            color:  silver;
+            background-color: {{ session['class'] }};
+    }
+    h4 {
+        color: green;
+        font: verdana;
+    }
+    h3 {
+        text-align: center;
+        font: verdana;
+    }
+    form {
+        margin: 20px;
+    }
+    </style>
+    <body>
+        <h3>Add a friend.</h3>
+        {% with messages = get_flashed_messages() %}
+         {% if messages %}
+           {% for message in messages %}
+             <p><span>{{message}}</span></p>
+           {% endfor %}
+         {% endif %}
+       {% endwith %}
+        <form class="{{ session['form']}}" action='/friends' method='post'>
+            First Name: <input type="text" name="first_name">
+            Last Name: <input type="text" name="last_name">
+            Email: <input type='text' name='email'>
+            <input type='submit' value='Submit'>
+        </form>
+          <div>
+              <a href="/clear">RESET</a>
+          </div>
+      <h3>Your Friends</h3>
+      {% for friend in all_friends: %}
+      <h4>Friend</h4>
+      <p>{{ friend['first_name'] }} {{ friend['last_name'] }}</p>
+      <p>{{ friend['email'] }} created at: {{ friend['created_at'] }}</p>
+      <a href="/friends/{{ friend['id'] }}/edit">Update Friend</a>
+      <form class="" action="/friends/{{ friend['id'] }}/delete" method="post">
+          <input type="submit" name="button" value="Delete Friend">
+      </form>
+      {% endfor %}
+        <div>
+            <a href="/clear">RESET</a>
+        </div>
+    </body>
+</html>
