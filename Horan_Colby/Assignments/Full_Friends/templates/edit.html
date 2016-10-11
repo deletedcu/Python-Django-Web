@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Friend Information</title>
+
+	<style>
+
+	</style>
+</head>
+<body>
+	<h1>Edit your Information</h1>
+	<form method="post" action='/friends/{{ session["id"] }}'>
+		First Name: <input type="text" name="first_name">
+		Last Name: <input type="text" name="last_name">
+		Email: <input type="text" name="email">
+		<input type="submit" name="update" value="Update Friend">
+	</form>
+	<form method="post" action="/friends/{{ session['id'] }}/delete">
+		<input type="submit" value ="Delete Friend">
+	</form>
+</body>
+</html>
