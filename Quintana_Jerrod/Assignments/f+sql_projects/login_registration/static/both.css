@@ -1,0 +1,12 @@
+.wrapper{
+  padding: 30px;
+}
+input{
+  margin-right: 30px;
+}
+.error{
+  color: darkred;
+}
+.login{
+  margin-top: 100px;
+}
