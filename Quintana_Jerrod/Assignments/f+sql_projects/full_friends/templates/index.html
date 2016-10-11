@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>index.html</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}" media="screen" title="no title">
+  </head>
+  <body>
+    <div class="wrapper">
+      <h3>To Add Friend</h3>
+      <form class="add" action="/friends" method="post">
+        First: <input type="text" name="first" value="">
+        Last: <input type="text" name="last" value="">
+        Email:  <input type="text" name="email" value="">
+        <input type="submit" name="submit" value="Add">
+      </form>
+      <h1>All Friends</h1>
+      {% for i in all: %}
+        <h3>Friend:</h3> <form action='/friends/{{ i['id'] }}/edit' method='post' > <input type="submit" name="submit" value="Edit" ></form>
+        <form action='/friends/{{ i['id'] }}/delete' method='post' > <input type="submit" name="submit" value="Delete" ></form>
+        <p>First: {{ i['first_name'] }}</p>
+        <p>Last: {{ i['last_name'] }}</p>
+        <p>Email: {{ i['email'] }}</p>
+        <p>Created: {{ i['created_at'] }}</p>
+      {% endfor %}
+    </div>
+  </body>
+</html>
