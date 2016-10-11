@@ -1,0 +1,17 @@
+﻿*{
+    padding:0px;
+    margin:0px;
+    text-align:center;
+}
+
+.congrats
+{
+
+    background-color:green;
+
+}
+
+.fail
+{
+    background-color:red;
+}
