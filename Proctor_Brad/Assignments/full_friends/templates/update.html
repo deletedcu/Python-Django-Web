@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Edit Friends</title>
+        <style>
+            *{
+                text-align: center;
+                color: ghostwhite;
+                background-color: slategray;
+            }
+            form input{
+                background-color: ghostwhite;
+                color: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>EDIT FRIENDS</h1>
+        <form action="/friends/{{id}}" method='post' />
+            <p>Edit first name: <input type="text" name="first_name" placeholder='{{friends['first_name']}}'/></p>
+            <p>Edit last name: <input type="text" name="last_name" placeholder='{{friends['last_name']}}'/></p>
+            <p>Edit email: <input type="text" name="email" placeholder='{{friends['email']}}' /></p>
+            <input type="submit" name="submit" />
+        </form>
+    </body>
+</html>
