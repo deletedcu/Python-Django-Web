@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full Friends</title>
+	<style>
+*{
+	background-color: black;
+	color: white;
+	padding: 5px;
+}
+#textbox input{
+	border: 2px solid yellow;
+	width: 150px;
+	color: yellow;
+}
+	</style>
+
+
+</head>
+<body>
+	 {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul class=flashes>
+		{% for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+            {% block body %}{% endblock %}
+
+	<h1><u>My Hoodrat Friends</u></h1>
+	<div id='textbox'>
+		<form action='/friends' method='post'>
+		<p>First Name: <input type='text' name='first_name'></p>
+		<p>Last Name: <input type='text' name='last_name'></p>
+		<p>Email: <input type='text' name='email'></p>
+		<input type='submit' value='Submit'>
+		</form>
+	</div>
+	{% for x in all_friends %}
+		<p>ID: {{ x['id'] }}</p>
+		<p>First Name: {{ x['first_name'] }}</p>
+		<p>Last Name: {{ x['last_name'] }}</p>
+		<p>Email: {{ x['email'] }}</p>
+
+	<form action="/friends/{{ x['id'] }}/delete" method='post'>
+		<input type='submit' value='delete' />
+	</form>
+	<form action="/friends/{{ x['id'] }}/edit">
+		<input type='submit' value='Edit'>
+	{% endfor %}
+
+</body>
+</html>
