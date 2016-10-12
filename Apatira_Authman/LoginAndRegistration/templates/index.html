@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}" />
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div>
+        <h1>Welcome to the Login and Registration Page</h1>
+        <br />
+        <form action="/process" method="post">
+            <label>First Name: </label><input type="text" name="first_name" value="" />
+            <label>Last Name: </label><input type="text" name="last_name" value="" />
+            <label>Email: </label><input type="text" name="email" value="" />
+            <label>Password: </label><input type="password" name="password" value="" />
+            <label>Confirm Password: </label><input type="password" name="confirm" value="" />
+            <input type="submit" name="subBtn" value="Submit User" />
+        </form>
+        <h2>Login</h2>
+        <form action="/getuser" method="post">
+            <label>Email</label><input type="text" name="email" value="" />
+            <label>Password</label><input type="password" name="password" value="" />
+            <input type="submit" name="subBtn" value="Login" />
+        </form>
+    </div>
+</body>
+</html>

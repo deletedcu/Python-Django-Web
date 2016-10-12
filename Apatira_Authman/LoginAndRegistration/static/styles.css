@@ -1,0 +1,29 @@
+﻿* {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+form
+{
+    width: 200px;
+    margin:10px auto;
+    background-color:lightgrey;
+    
+}
+
+form label
+{
+    display: inline-block;
+    margin:5px;
+}
+
+form label input
+{
+    display: inline-block;
+    margin:5px;
+}
+
+div{
+    align-content: center;
+}
