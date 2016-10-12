@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="Junaid_page" content="Discription">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+</head>
+  <body>
+    <h1>Welcome {{session['user info']['first_name']}}</h1>
+    <form action='/logout'>     
+      <input type="submit" name="back" value="Go Back">
+    </form>
+
+  </body>
+</html>
