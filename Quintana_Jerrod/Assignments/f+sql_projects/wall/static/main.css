@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.wrapper{
+  width: inherit;
+  height: inherit;
+  margin: auto;
+  padding: 20px;
+}
+h1{
+    text-align: center;
+    margin-bottom: 0px;
+}
+h2{
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}
+.form{
+  background-color: lightgrey;
+  width: 700px;
+  height: 310px;
+  margin: 10px auto;
+  padding: 30px;
+  color: black;
+  border: 3px solid black;
+}
+.register{
+  display: inline-block;
+  width: 340px;
+  height: 300px;
+  vertical-align: top;
+}
+.login{
+  display: inline-block;
+  width: 340px;
+  height: 300px;
+  vertical-align: top;
+}
+p{
+  margin: 10px;
+}

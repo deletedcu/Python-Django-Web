@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wall</title>
+    <link rel="stylesheet" href="{{url_for('static',filename= 'wall.css')}}" media="screen" title="no title">
+  </head>
+  <body>
+    <div class="wrapper">
+        <div class="header">
+          <h1>Coding Dojo Wall</h1>
+          <h3>Welcome {{ session['name'] }}</h3>
+          <form class="" action="/logout" method="post">
+            <input type="submit" name="logout" value="Log Out">
+          </form>
+        </div>
+        <div class="body">
+          <h2>Post a message</h2>
+          <form class="" action="/message" method="post">
+            <input type="hidden" name="action" value="message">
+            <textarea class="message" name="message" rows="10" cols="190"></textarea>
+            <input class="messagepost" type="submit" name="submit" value="Post a message">
+          </form>
+          {% for i in all %}
+            <h4>{{ i['first']}} {{ i['last']}} - {{ i['date']}}</h4>
+            <p> {{ i['message'] }} </p>
+            {%if i['user_id'] == session['id'] %}
+              <form  action="/message" method="post">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="delete" value=" {{ i['id']}}">
+                <input class="delete"type="submit" name="submit" value="Delete Comment">
+              </form>
+            {% endif %}
+              {% for index in comment %}
+                {% if index['cid'] == i['id'] %}
+                  <h4 class="indent">{{ index['first']}} {{ index['last']}} - {{ index['date']}}</h4>
+                  <p class="indent"> {{ index['comment'] }} </p>
+                {% endif %}
+              {% endfor %}
+              <h4 class="special">Post a comment</h4>
+              <form class="last" action="/message" method="post">
+                <input type="hidden" name="action" value="comment">
+                <input type="hidden" name="id" value="{{ i['id'] }}">
+                <input type="hidden" name="user" value="{{ session["id"]}}">
+                <textarea class="comment" name="comment" rows="5" cols="170"></textarea>
+                <input class="button" type="submit" name="submit" value="Post a comment">
+              </form>
+          {% endfor %}
+        </div>
+    </div>
+  </body>
+</html>
