@@ -1,0 +1,48 @@
+<html>
+    <head>
+       <title>Dojo Suvey</title>
+    </head>
+    <body>
+      <h1>Give me yo info PUNK!</h1>
+       {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+      <form action='/users' method='post'>
+          Name: <input type='text' name="{{'name'}}">
+          <br>
+          Dojo Location:
+          <select name="Location">
+            <option value="{{'chicago'}}">Chicago</option>
+            <option value="{{'dallas'}}">Dallas</option>
+            <option value="{{'la'}}">Los Angeles</option>
+            <option value="{{'seattle'}}">Seattle</option>
+            <option value="{{'silicon'}}">Silicon Valley</option>
+            <option value="{{'dc'}}">Washington DC</option>
+          </select>
+          <br>
+          Favorite Language:
+          <select name='Language'>
+            <option name="{{'css'}}">CSS</option>
+            <option name="{{'python'}}">Python</option>
+            <option name="{{'ruby'}}">Ruby on Rails</option>
+            <option name="{{'mean'}}">Mean</option>
+            <option name="{{'ios'}}">ios</option>
+          </select>
+          <br>
+          Comment (optional):
+          <br>
+          <input type='text' name="{{'comment'}}">
+          <input type='submit' value='Submit'>
+      </form>
+    </body>
+</html>
+
+
+
+
+
+

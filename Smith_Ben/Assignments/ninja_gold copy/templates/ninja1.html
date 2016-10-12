@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+#container{
+  width: 1000px;
+}
+#textscroll{
+  height: 300px;
+  width: 600px;
+  overflow: scroll;
+  border: 2px solid black;
+}
+.location{
+  display: inline-block;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+}
+.green{
+  color: green;
+}
+.red{
+  color: red;
+}
+    </style>
+  </head>
+  <body>
+    <div id="container">
+    <h2>Ninja Gold</h2>
+    <h3>You Gold: {{ session['gold'] }}</h3>
+    <div class="location">
+    <h3>Farm</h3>
+      <p>(earns 10 - 20 gold)</p>
+        <form class="goldbutton" action="/process" method="post">
+          <input type="hidden" name="location" value="farm">
+          <button type="submit" class="find" value="Farm!">Find Gold</button>
+        </form>
+    </div>
+    <div class="location">
+      <h3>Cave</h3>
+        <p>(earns 5 - 10 gold)</p>
+      <form class="goldbutton" action="/process" method="post">
+        <input type="hidden" name="location" value="cave">
+        <button type="submit" class="find" value="Cave!">Find Gold</button>
+      </form>
+    </div>
+    <div class="location">
+      <h3>House</h3>
+    <p>(earns 2 - 5 gold)</p>
+      <form class="goldbutton" action="/process" method="post">
+        <input type="hidden" name="location" value="house">
+        <button type="submit" class="find" value="House!">Find Gold</button>
+      </form>
+    </div>
+    <div class="location">
+      <h3>Casino</h3>
+    <p>(lose 50 or earn 50 gold)</p>
+      <form class="goldbutton" action="/process" method="post">
+        <input type="hidden" name="location" value="casino">
+        <button type="submit" class="find" value="Casino!">Find Gold</button>
+      </form>
+    </div>
+  </div>
+  
+
+  <h4>Activities:</h4>
+  <div id='textscroll'>
+    {%for x in (session['activities']):%}
+      <p class="{{x['class']}}">{{x['activity']}}</p>
+    {% endfor %}
+  </div>
+
+
+
+
+  </body>
+</html>
