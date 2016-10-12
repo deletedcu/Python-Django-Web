@@ -1,0 +1,17 @@
+def CoinToss():
+	import random
+	newArr = []	
+	tails = 0
+	heads = 0
+	for count in range(100):
+		random_num = random.random()
+		newArr.append(round(random_num))
+	for count in len(newArr):
+		if(newArr[count] > 0):
+			head += 1
+		elif(newArr[count] == 0):
+			tails += 1
+	print 'Number of Head Tosses: ', heads
+	print 'Number of Tails Tosses: ', tails
+	
+
