@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Great Number Game</title>
+  </head>
+  <body>
+    <h1>Welcome to the Great Number Game</h1>
+    <p>
+      I am thinking of a number between 1 - 100.
+    </p>
+    <p>{{session['p']}}</p>
+    <p>
+      Take a guess!
+    </p>
+    <form class="" action="/test" method="post">
+      <input type="text" name="guess" placeholder="Guess here!"value="">
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </body>
+</html>

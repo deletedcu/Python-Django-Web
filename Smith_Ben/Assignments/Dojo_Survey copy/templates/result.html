@@ -1,0 +1,24 @@
+<html>
+    <head>
+       <title>Dojo Suvey</title>
+    </head>
+    <body>
+			{% with messages = get_flashed_messages() %}
+			{% if messages %}
+			{% for message in messages %}
+			<p>{{message}}</p>
+			{% endfor %}
+			{% endif %}
+			{% endwith %}
+
+		<h1><u>Submitted Info</u></h1>
+		<p>Name: {{ session['name'] }}</p>
+		<p>Dojo Location: {{ session['Location'] }}</p>
+		<p>Favorite Language: {{ session['Language'] }}</p>
+		<p>Comment: {{ session['comment'] }}</p>
+		<form action='/back'>        
+			<input type="submit" name="back" value="Go Back">
+		</form>
+
+ 	</body>
+</html>

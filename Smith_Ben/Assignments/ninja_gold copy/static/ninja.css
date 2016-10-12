@@ -1,0 +1,8 @@
+/*CSS Reset Settings */
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#container{
+	width: 1000px;
+}

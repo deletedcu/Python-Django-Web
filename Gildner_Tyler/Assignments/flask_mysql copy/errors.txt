@@ -1,0 +1,9 @@
+1. (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+2. (2003, "Can't connect to MySQL server on '127.0.0.1' (61)")
+
+3. (1045, "Access denied for user 'buttfoot'@'localhost' (using password: YES)")
+
+4. (1049, "Unknown database 'donaldtrumpsnazichildren'")
+
+5. Changing host does not throw an error, oddly enough.
