@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<style>
+	#container{
+		padding: 20px;
+	}
+	#container input{
+		padding-left: 15px;
+		margin-left: 7px;
+	}
+	</style>
+</head>
+<body>
+   {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  {{ message }}
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+
+
+<div id='container'>
+	<form action='/registering' method='post'>
+	<p>First Name:<input type='text' name='regfname' placeholder='First Name'></p>
+	<p>Last Name:<input type='text' name='reglname' placeholder="Last Name"></p>
+	<p>E-Male:<input type="text" name="regemail" placeholder="E-Male"></p>
+	<p>Password:<input type='password' name="regpwd" placeholder="Password"></p>
+	<p>Confirm Password:<input type="password" name="regcpwd" placeholder="Re-type Password"></p>
+	<input type='submit' name='submit' value='Register'>
+	</form>
+	<form action='/'>
+	<input type='submit' name='Go Back' value='Go Back'>
+	</form>
+</div>
+
+</body>
+</html>
