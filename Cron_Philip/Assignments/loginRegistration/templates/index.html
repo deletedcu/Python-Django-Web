@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login and Registration Form</title>
+    <style type="text/css">
+        .regError {
+            color: white;
+            font-weight: bold;
+            height: 40px;
+            width: 160px;
+            text-align: center;
+            background-color: red;
+        }
+        .logError {
+            color: white;
+            font-weight: bold;
+            height: 40px;
+            width: 160px;
+            text-align: center;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login:</h2>
+    {% with messages = get_flashed_messages(with_categories=true, category_filter=['logError', 'success']) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <p class="{{category}}">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+{% endwith %}
+    <form action="/login" method='POST'>
+        Email: <input type="text" name="email">
+        Password: <input type="password" name="password">
+        <input type="submit" value="Login">
+    </form>
+    
+    <hr>
+    <h2>Sign Up:</h2>
+    <h3>You know you want to!</h3>
+    {% with messages = get_flashed_messages(with_categories=true, category_filter=['regError']) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <p class="{{category}}">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+{% endwith %}
+    <form action="/registration" method='POST'>
+        <h2>Email:</h2>
+        <input type="text" name="email">
+        <h2>First Name:</h2>
+        <input type="text" name="first_name">
+        <h2>Last Name:</h2>
+        <input type="text" name="last_name">
+        <h2>Password:</h2>
+        <input type="password" name="password">
+        <h2>Confirm Password:</h2>
+        <input type="password" name="confirm_password">
+        <input type="submit" name="Submit">
+    </form>
+</body>
+</html>
