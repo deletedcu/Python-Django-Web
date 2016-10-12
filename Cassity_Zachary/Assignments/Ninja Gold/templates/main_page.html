@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Gold</title>
+  </head>
+  <body>
+    <h1>Total Gold:{{session['gold']}}</h1>
+    <form action="/process_money" method="post">
+      <h2>Farm</h2>
+      <p>(earns 10-20 gold!)</p>
+      <input type="hidden" name="building" value="farm">
+      <input type ="submit" value="Find Gold!"/>
+    </form>
+    <form action="/process_money" method="post">
+      <h2>Cave</h2>
+      <p>(earns 5-20 gold!)</p>
+      <input type="hidden" name="building" value="cave">
+      <input type ="submit" value="Find Gold!"/>
+    </form>
+    <form action="/process_money" method="post">
+      <h2>House</h2>
+      <p>(earns 2-5 gold!)</p>
+      <input type="hidden" name="building" value="house">
+      <input type ="submit" value="Find Gold!"/>
+    </form>
+    <form action="/process_money" method="post">
+      <h2>Casino</h2>
+      <p>(earns/takes 0-50 gold!)</p>
+      <input type="hidden" name="building" value="casino">
+      <input type ="submit" value="Find Gold!"/>
+    </form>
+    <form action='/reset' method='post'>
+      <h2>Restart?</h2>
+      <input type ="hidden" name = 'reset' value = 'reset'>
+      <input type = 'submit' value ='Restart!'>
+    </form>
+  </body>
+</html>
