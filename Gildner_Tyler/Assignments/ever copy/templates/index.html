@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>EMAIL</title>
+  <style media="screen">
+    p{
+        color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Verified Email Addresses</h1>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form action='/email' method='POST'>
+    <label for="email">EMAIL Address:<input type="text" name="email" id="email"></label>
+
+    <input type="submit" value="Add">
+  </form>
+</body>
+</html>
