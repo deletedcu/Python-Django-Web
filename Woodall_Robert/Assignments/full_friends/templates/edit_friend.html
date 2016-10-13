@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Edit Friend</title>
+	<style>
+		.error{
+			padding: 5px 10px;
+			margin-bottom: 5px;
+			display: inline-block;
+			color: white;
+			background: red;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	{% with messages = get_flashed_messages(with_categories=True) %} 
+		{% if messages %}
+			{% for category, message in messages %}
+				<p class="{{ category }}">{{ message }}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<h3>Edit {{ friendToEdit['first_name'] }} {{ friendToEdit['last_name'] }}'s Information:</h3>
+	<form action="/friends/{{ friendToEdit['id'] }}" method="post">
+		<label for="fname">First Name:</label>
+		<input type="text" name="fname" value="{{ friendToEdit['first_name'] }}">
+		<label for="lname">Last Name:</label>
+		<input type="text" name="lname" value="{{ friendToEdit['last_name'] }}">
+		<label for="email">Email:</label>
+		<input type="text" name="email" value="{{ friendToEdit['email'] }}">
+		<input type="submit" value="Update Friend">
+	</form>
+</body>
+</html>

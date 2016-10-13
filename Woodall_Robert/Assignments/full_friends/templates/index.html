@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Full Friends</title>
+	<style>
+		table{
+			border: 1px inset black;
+			text-align: left;
+		}
+		
+		th, td{
+			padding: 5px;
+			border: 1px solid black;
+			text-align: center;
+		}
+		
+		#user{
+			column-span: all;
+		}
+		
+		.error{
+			padding: 5px 10px;
+			margin-bottom: 5px;
+			display: inline-block;
+			color: white;
+			background: red;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<th>User Name</th>
+			<th>Friend Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Created</th>
+			<th>Make Changes</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td id="user">Robert Woodall</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			{% for friend in all_friends %}
+			<tr>
+				<td>-</td>
+				<td>{{ friend['first_name'] }}</td>
+				<td>{{ friend['last_name'] }}</td>
+				<td>{{ friend['email'] }}</td>
+				<td>{{ friend['created_at'] }}</td>
+				<td>
+					<form action="/friends/{{ friend['id'] }}/edit">
+						<input type="submit" value="Edit">
+					</form>
+					<form action="/friends/{{ friend['id'] }}/delete" method="post">
+						<input type="submit" value="Delete">
+					</form>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	
+	{% with messages = get_flashed_messages(with_categories=True) %} 
+		{% if messages %}
+			{% for category, message in messages %}
+				<p class="{{ category }}">{{ message }}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<h3>Add friend:</h3>
+	<form action="/friends" method="post">
+		<label for="fname">First Name:</label>
+		<input type="text" name="fname">
+		<label for="lname">Last Name:</label>
+		<input type="text" name="lname">
+		<label for="email">Email:</label>
+		<input type="text" name="email">
+		<input type="submit" value="Add Friend">
+	</form>
+	
+</body>
+</html>
