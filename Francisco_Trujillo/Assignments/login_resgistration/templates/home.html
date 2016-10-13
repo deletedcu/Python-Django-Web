@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+   
+</head>
+<body>
+    <h1>  {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <h1>{{ message }}</h1>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}</h1>
+        
+        
+        {% for x in value %}
+        <p>First Name: {{ x['fname']}} </p>
+        <p>Last Name: {{x['lname']}}</p>
+        <p>email: {{x['email']}}</p>
+        {% endfor %}
+        <h2><a href="/logout">Log out</a></h2>
+</body>
+</html>

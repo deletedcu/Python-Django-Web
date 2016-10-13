@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+       input {
+           display: block;
+       }
+       .flash{
+           color: red;
+           font-weight: bold;
+       }
+    </style>
+    <meta charset="UTF-8">
+    <title>Login and Restration</title>
+</head>
+<body>
+   
+   
+    <h1> LOGIN AND REGISTRATION</h1>
+    <h2>Registration form</h2>
+    <div class="flash">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    
+    <form action="/registration" method="post">
+        First name: <input type="text" name="fname" value=""/>
+        Last name: <input type="text" name = "lname" value=""/>
+        Email: <input type="text" name="email" value=""/>
+        Password: <input type="password" name = "pwd" value = ""/>
+        Confirm Password: <input type="password" name="cpwd" value =""/>     
+        <button type="submit" value="Submit">Register</button>
+    </form>
+    <h2>Login form</h2>
+    <form action="/login" method="post">
+        Email: <input type="text" name="email" value=""/>
+        Password: <input type="password" name = "pwd" value = ""/>
+        <button type="submit" value="Submit">Login</button>
+    </form>
+    
+    
+</body>
+</html>
