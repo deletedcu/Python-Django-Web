@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Friends Page</title>
+</head>
+<body>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p class="error">{{message}}</p>
+          {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+    <form action="/friends/{{ one_friend['id'] }}" method='POST'>
+        <label for="first_name">First Name:<input type="text" name="first_name" value="{{one_friend['first_name']}}"></label>
+        <label for="last_name">Last Name:<input type="text" name="last_name" value="{{one_friend['last_name']}}"></label>
+        <label for="email">Email:<input type="text" name="email" value="{{one_friend['email']}}"></label>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>
