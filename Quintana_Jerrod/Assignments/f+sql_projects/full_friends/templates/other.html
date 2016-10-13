@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>full friends stuff</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}" media="screen" title="no title">
+  </head>
+  <body>
+    <div class="wrapper">
+  
+        <form class="edit" action="/friends/<id>" method="post">
+          First: <input type="text" name="first" value="">
+          Last: <input type="text" name="last" value="">
+          Email:  <input type="text" name="email" value="">
+          <input type="submit" name="submit" value="Submit">
+        </form>
+    </div>
+  </body>
+</html>
