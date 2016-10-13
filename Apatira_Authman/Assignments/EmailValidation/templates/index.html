@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="{{url_for('static', filename='styles.css')}}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p class="fail">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form action="/process" method="post">
+        <label>Email Address:</label>
+        <input type="text" name="email" value="" />
+        <input type="submit" name="name" value="Submit" />
+    </form>
+</body>
+</html>

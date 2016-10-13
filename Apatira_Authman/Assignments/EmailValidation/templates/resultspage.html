@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}" />
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p class="congrats">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <!--<h1>Congratulations the email address you entered: {{e}}</h1>-->
+    <h2>Email addresses entered:</h2>
+    <hr />
+        {% for e in emailn%}
+            <p>{{e['email_address']}}  {{e['created_at']}}</p>
+        {% endfor %}
+
+    <form action="/delete" method="post">
+        <input type="submit" name="delete" value="Delete" />
+    </form>
+</body>
+</html>
