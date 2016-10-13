@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+	<div id="container">
+		<h2>Your Gold: <span>{{ session['gold'] }}</span></h2>
+		<div id="arenas">
+			<div class="arena">
+				<h3>Farm</h3>
+				<p>(get 10-20 gold)</p>
+				<form action="/process_money" method="POST">
+					<input type="hidden" name="arena" value="farm" />
+					<input type="submit" name="Yee-Haw" />
+				</form>
+			</div>
+			<div class="arena">
+				<h3>Cave</h3>
+				<p>(get 5-10 gold)</p>
+				<form action="/process_money" method="POST">
+					<input type="hidden" name="arena" value="cave" />
+					<input type="submit" name="Dig It" />
+				</form>
+			</div>
+			<div class="arena">
+				<h3>House</h3>
+				<p>(get 2-5 gold)</p>
+				<form action="/process_money" method="POST">
+					<input type="hidden" name="arena" value="house" />
+					<input type="submit" name="Clean It" />
+				</form>
+			</div>
+			<div class="arena">
+				<h3>Casino</h3>
+				<p>(win/lose 0-50 gold)</p>
+				<form action="/process_money" method="POST">
+					<input type="hidden" name="arena" value="casino" />
+					<input type="submit" name="Gamble" />
+				</form>
+			</div>
+		</div>
+		<div id="activities">
+			<h2>Activities: </h2>
+			<div id="log">
+				{% for result in session['log'] | reverse(): %}
+					{% if result[:4] == "Lost": %}
+						<p class="red">{{ result }}</p>
+					{% else: %}
+						<p class="green">{{ result }}</p>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		<form action="/reset" method="POST">
+			<input type="submit" value="START OVER">
+		</form>
+	</div>
+</body>
+</html>
