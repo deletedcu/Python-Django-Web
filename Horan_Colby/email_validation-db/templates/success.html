@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sucess!</title>
+
+	<style>
+	h2{
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+	}
+	.success p{
+		padding: 50px;
+		background-color: green;
+		color:white;
+	}
+	.textarea{
+		margin-left: 100px;
+		height:600px;
+		width: 300px;
+		overflow: scroll;
+	}
+
+	h1{
+			margin-left: 200px;
+			width: 600px;
+			padding: 5px  50px 5px 50px;
+			background-color: green;
+			font-size: 24px;
+			text-align: center;
+			border-style: solid;
+			border-width: 3px;
+			border-color: black;
+	}
+	</style>
+
+</head>
+<body>
+	
+	<h1>The email address you entered {{ email }}is a VALID email address! Thank you!</h1>
+	<h2>Email Address Entered:</h2>
+	<div class="textarea">
+		{% for email in all_email: %}
+			<p>ID: {{ email['id'] }}</p>
+			<p>Email: {{ email['email'] }} </p>
+			<p> {{ email ['created_at'] }}</p>
+		{% endfor %}
+	</div>
+</body>
+</html>
