@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>success</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='both.css')}}" media="screen" title="no title">
+  </head>
+  <body>
+    <h1 class="correct">'The email address you entered {{email}} is a VALID email address! Thank You!'</h1>
+    <div>
+      <h2><u>Email Addresses Entered:</u></h2>
+      {% for i in enter: %}
+        <p>{{ i['address'] }} &emsp; {{ i['created_at'] }}</p>
+      {% endfor %}
+    </div>
+  </body>
+</html>
