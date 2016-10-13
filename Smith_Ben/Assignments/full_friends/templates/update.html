@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Page</title>
+	<style>
+	*{
+	background-color: black;
+	color: white;
+	padding: 5px;
+}
+</style>
+</head>
+<body>
+	<h1>Edit Name and Email</h1>
+
+	<form action="/friends/{{friends['id']}}" method='post'>
+		<p>First Name: <input type='text' name='first_name' placeholder="{{friends['first_name']}}"></p>
+		<p>Last Name: <input type='text' name='last_name' placeholder="{{friends['last_name']}}"></p>
+		<p>Email: <input type='text' name='email' placeholder="{{friends['email']}}"></p>
+		<input type='submit' value='Submit'>
+	</form>
+
+</body>
+</html>
