@@ -39,3 +39,9 @@ if __name__ == '__main__':
 """
 Explain line 24 - 31.  Will it work?  How, where what? why!?
 """
+
+"""
+Use variable result to find the name of the building.
+Sets session gold equal to a random number depending on building
+Sets key of 'class' to a value of 'red' or 'green' depending if you lose or gain money
+"""

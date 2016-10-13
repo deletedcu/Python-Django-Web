@@ -1,6 +1,10 @@
 from flask import Flask, render_template,session
 app = Flask(__name__)
+<<<<<<< HEAD
+app.secret_key = 'Abba'
+=======
 app.secret_key = '123'
+>>>>>>> a5fbb0e4be104f4c2c8687849049cb538113c192
 
 @app.route('/')
 def myfirstfunction():
