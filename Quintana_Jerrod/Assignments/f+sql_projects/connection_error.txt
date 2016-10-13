@@ -1,0 +1,26 @@
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1049, "Unknown database 'db’”)
+	This error was caused by changing the ‘database’ value to an incorrect one, I used ‘db’, to fix, i simply changed the database value to the correct one ‘maybe’
+
+File "/Users/jerrodq2/Desktop/hello_flask/flask_mysql/mysqlconnection.py", line 9
+    'database': 'mybd', # we got db as an argument
+              ^
+SyntaxError: invalid syntax
+	this error was caused when I didn’t have a comma after the host value, simple syntax error, fixed by placing comma
+
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")	
+	Caused by having an incorrect password in the password value field, fixed by  changing it to the correct one
+
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)")
+	caused by having the wrong value for the ‘port’ field, can’t connect to the right port, fixed by changing back to correct port value.
+
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'rodot'@'localhost' (using password: NO)")
+	caused by not have the correct user value, changed ‘root’ to ‘rodot’, fixed by changed to root
+
+DATABASE_URI = "mysql://{}:{}@127.0.0.1:{}/{}".format(config['user'], config['password'], config['port'], config['database'])
+KeyError: 'database'
+	caused by misspelling the ‘database’ key, fixed by correcting the spelling
+
+
+
+ask about setting or changing password
+why my folders sometimes copy themselves?
