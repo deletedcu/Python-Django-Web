@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Email Validation with MySQL</title>
+	<style>
+		.error{
+			padding: 5px 10px;
+			margin-bottom: 5px;
+			display: inline-block;
+			color: white;
+			background: red;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	{% with messages = get_flashed_messages(with_categories=True) %} 
+		{% if messages %}
+			{% for category, message in messages %}
+				<p class="{{ category }}">{{ message }}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<h3>Enter an email address:</h3>
+	<form action="/process" method="post">
+		Email:
+		<input type="text" name="email">
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
