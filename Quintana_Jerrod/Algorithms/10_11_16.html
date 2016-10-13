@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  $(docuemnt).ready(function(){
+    SLL.prototype.removeFront=function(){
+      if (!this.head)
+        return null;
+      var temp = this.head;
+      this.head = temp.next;
+      temp.next = null;
+      if (!this.head){
+        return null;
+      } eles {
+        return this.head;
+      }
+    }
+
+    SLL.prototype.contains=function(SLL, check){
+      var current = SLL.head;
+      while (current){
+        if (current.val  == check){
+          return true;
+        }
+        current = current.next;
+      }
+      return false;
+    }
+
+    SLL.prototype.front=function(){
+      if(!this.head)
+        return null;
+      else
+        return this.head.val
+    }
+
+  });
+
+
+  $(function(){
+    // or here, pick one.
+  });
+  </script>
+</head>
+<body>
+
+</body>
+</html>
