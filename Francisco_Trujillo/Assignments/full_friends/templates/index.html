@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Below are all my friends!!</h1>
+    <h2>Add friend fill below</h2>
+    <form action="/friends" method="post">
+        First Name: <input type="text" name="first_name"  value=""/>
+        Last Name: <input type="text" name="last_name" value=""/>
+        Email: <input type="text" name = "email" value=""/>
+        <button type="submit" value="submit">Add Friend</button>
+    </form>
+    <div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+    </div>
+    <h2>Friend List is below</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Created</th>
+                <th>Edit User</th>
+                <th>Delete User</th>
+            </tr>
+        </thead>
+        <tbody>
+           {% for friend in friends %}
+            <tr>              
+               <td>{{ friend['first_name'] }}</td>
+               <td>{{ friend['last_name'] }}</td>
+               <td>{{ friend['email'] }} </td>
+               <td>{{ friend['created'] }} </td> 
+               <td><form action="/friends/{{friend['id']}}/edit"><button type = "submit">Edit</button></form></td>
+               <td><form action="/friends/{{friend['id']}}/delete" method = "post"><button type = "submit">Delete</button></form></td>                 
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>
