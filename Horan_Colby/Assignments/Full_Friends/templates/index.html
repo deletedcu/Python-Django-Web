@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full Friends</title>
+	<style>
+		*{
+			text-align: center;
+		}
+		.records form{
+			text-align: center;
+			padding: 5px 10px;
+			border: 1px solid;		
+		}
+		.records input{
+			text-align: left;
+		}
+		.friends{
+			width: 900px;
+			margin: 0px auto;
+		}
+		.friends p{
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div class="records">
+		<form method="post" action="/friends">
+			<input type="hidden" name="info">
+			First Name: <input type="text" name="first_name">
+			Last Name: <input type="text" name="last_name">
+			Email: <input type="email" name="email">
+			<input type="submit" name="submit" value="Add Friend">
+		</form>
+	</div>
+	<div class="friends">
+	{% for friend in all_friends: %}
+		<p>First Name: {{ friend ['first_name'] }}</p>
+		<p>Last Name: {{ friend ['last_name'] }}</p>
+		<p>Email: {{ friend ['email'] }}</p>
+		<p>Created At: {{ friend['created_at'] }}</p>
+		<form action="/friends/{{ friend['id'] }}/edit">
+			<input type="submit" name="edit" value="Edit">
+		</form>
+		<hr>
+	{% endfor %}
+	</div>
+</body>
+</html>
