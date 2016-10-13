@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    $(docuemnt).ready(function(){
+      function SLL(){
+        this.head;
+      }
+      function node(val){
+        this.value = val;
+        this.next = null;
+      }
+      function insertFront(valueToInsert){
+        var nodeToInsert = node(valueToInsert);
+        var temp = this.head;
+        this.head = nodeToInsert;
+        nodeToInsert = temp;
+      }
+    });
+
+
+    $(function(){
+    // or here, pick one.
+  });
+  </script>
+</head>
+<body>
+
+</body>
+</html>
