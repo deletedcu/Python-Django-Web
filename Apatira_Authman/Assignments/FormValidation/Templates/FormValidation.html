@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}" />
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form action="/process" method="post">
+        <label>Your Name: </label>
+        <input type="text" name="full_name" value=" " class="block"/>
+        <label>Dojo Location: </label>
+        <select name="locations" class="block">
+            <option value="San Jose">San Jose</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="Chicago">Chicago</option>
+            <option value="San Fransico">San Fransico</option>
+        </select>
+        <label>Favorite Language: </label>
+        <select name="favorites" class="block">
+            <option value="Python">Python</option>
+            <option value="Javascript">Javascript</option>
+            <option value="C#">C#</option>
+            <option value="SQL">SQL</option>
+        </select>
+            <input type="text" name="commentArea" value=" " class="block" />
+            <input type="submit" name="" value="Submit" class="block" />
+    </form>
+</body>
+</html>
