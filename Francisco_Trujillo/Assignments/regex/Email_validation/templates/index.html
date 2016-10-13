@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <style>
+       .warning{
+           padding-top: 20px
+           
+           width: 200px;
+           height: 50px;
+           background: red;
+           font-size: 14pt;
+           color: white;
+           padding-top: 10px;
+           text-align: center;
+       }
+    
+    
+    </style>
+    <meta charset="UTF-8">
+    <title>Email Validation</title>
+</head>
+<body>
+    <div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p class="warning">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    </div>
+   
+    <form action="/add" method="post">
+        Please enter your email<input type="text" name ="email" value =""/>
+        <button type="submit" value = "submit">Submit</button>
+        
+    </form>
+</body>
+</html>
