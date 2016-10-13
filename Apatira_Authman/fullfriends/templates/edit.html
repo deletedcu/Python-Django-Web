@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Welcome {{f['first_name']}} {{f['last_name']}}</h1>
+    <form action="/friends/{{f['id']}}" method="post">
+        <label>First Name: </label><input type="text" name="first_name" value="{{f['first_name']}}" />
+        <label>Last Name: </label><input type="text" name="last_name" value="{{f['last_name']}}" />
+        <label>Occupation: </label><input type="text" name="occupation" value="{{f['occupation']}}" />
+        <input type="submit" name="subBtn" value="Update Friend" />
+    </form>
+</body>
+</html>
