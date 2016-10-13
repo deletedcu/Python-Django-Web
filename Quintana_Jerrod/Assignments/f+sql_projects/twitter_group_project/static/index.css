@@ -1,0 +1,15 @@
+.wrapper{
+  padding: 20px;
+}
+span{
+  color: red;
+}
+.by{
+  color: blue;
+}
+.fav{
+  color: green;
+}
+.tweet{
+  margin-bottom: 40px;
+}

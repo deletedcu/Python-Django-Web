@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Twitter Group Project</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}" media="screen" title="no title">
+  </head>
+  <body>
+    <div class="wrapper">
+      {% for i in tweet: %}
+        <!-- {% for index in color: %} -->
+          <span>Tweet:</span> {{ i['created_at'] }}
+          <p class="by">Tweeted by: {{ i['user']}}
+          <!-- {%if i['tweet'] == index['tweet_id']: %}
+          <p class="fav">{{ i['tweet'] }}</p>
+          {% else:%} -->
+          <p class="tweet">{{ i['tweet'] }}</p>
+        <!-- {% endif %}
+        {%endfor%} -->
+      {% endfor %}
+      <h1>No mutual followers</h1>
+  </div>
+  </body>
+</html>
