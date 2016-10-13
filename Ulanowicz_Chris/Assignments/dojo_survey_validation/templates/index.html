@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dojo Survey</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}" />
+</head>
+<body>
+	<div id="container">
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<p class="error">{{ message }}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<fieldset>
+			<legend> Survey </legend>
+			<form action="/" method="POST">
+				<label for="name">Your Name: 
+					<input type="text" name="name" id="name" />
+				</label>
+				<label for="location">Dojo Location: 
+					<select name="location" id="location">
+						<option></option>
+						<option>Bellevue</option>
+						<option>Burbank</option>
+						<option>Chicago</option>
+						<option>Dallas</option>
+						<option>DC</option>
+						<option>Mountain View</option>
+					</select>
+				</label>
+				<label for="language">Favorite Language: 
+					<select name="language" id="language">
+						<option></option>
+						<option>C#</option>
+						<option>Java</option>
+						<option>JavaScript</option>
+						<option>PHP</option>
+						<option>Python</option>
+						<option>Ruby</option>
+					</select>
+				</label>
+				<label for="comment">Comment (optional):
+					<textarea name="comment" id="comment"></textarea>
+				</label>
+				<input type="submit" value="Button" />
+			</form>
+		</fieldset>
+	</div>
+</body>
+</html>
