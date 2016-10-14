@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Form Test Show</title>
+  </head>
+  <body>   
+    <h2>This is the Edit page </h2>
+    {%for val in users_edit:%}    
+    <form action="/friend/{{ val['id']}}" method="POST">
+      {{  val['User_Name']}}: <input type="text" name="email">
+      <br>
+      {{  val['First_Name']}}: <input type="text" name="first_name">
+      <br>
+      {{  val['Last_Name']}}: <input type="text" name="last_name">
+      <br>
+      {{  val['created_at'] }}: <input type="text" name="created_at">
+      <br>
+      <input type="submit" value="Update Info">                
+    </form>
+    {%endfor%}
+    {%for val in users_edit:%}
+    <form action="/friend/{{ val['id']}}/delete" method="POST">
+      <input type="submit" value="Delete Friend" >
+    </form>
+    {%endfor%}
+  </body>
+</html>
+
