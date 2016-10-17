@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login/Register</title>
+	<style>
+		#login, #registration{
+			padding: 10px;
+		}
+		
+		#registration label{
+			display: block;
+		}
+		
+		#registration input{
+			margin-bottom: 15px;
+			width: 150px
+		}
+		
+		#registration input:last-child{
+			display: block;
+			width: auto;
+		}
+		
+		.registration_error, .login_error{
+			width: 375px;
+			padding: 5px;
+			color: white;
+			background: red;
+			font-weight: bold;
+			text-align: center;
+		}
+		
+		.login_error{
+			display: block;	
+		}
+		
+		.registration_error{
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<form id="login" action="/login" method="post">
+		<!-- Handle flask flash messages for login only -->
+		{% with messages = get_flashed_messages(with_categories=true, category_filter=["login_error"]) %}
+		  {% if messages %}
+			{% for category, message in messages %}
+			  <p class="{{ category }}">{{ message }}</p>
+			{% endfor %}
+		  {% endif %}
+		{% endwith %}	
+	
+		<label for="login_email">Email:</label>
+		<input type="text" name="login_email">
+		<label for="login_pw">Password:</label>
+		<input type="password" name="login_pw">
+		<input type="submit" value="Login">
+	</form>
+	<hr>
+	
+	<form id="registration" action="/register" method="post">
+		<!-- Handle flask flash messages for registration only -->
+		{% with messages = get_flashed_messages(with_categories=true, category_filter=["registration_error"]) %}
+		  {% if messages %}
+			{% for category, message in messages %}
+			  <p class="{{ category }}">{{ message }}</p>
+			{% endfor %}
+		  {% endif %}
+		{% endwith %}
+	
+		<label for="fname">First Name:</label>
+		<input type="text" name="fname">
+		<label for="lname">Last Name:</label>
+		<input type="text" name="lname">
+		<label for="email">Email:</label>
+		<input type="text" name="email">
+		<label for="pw">Password:</label>
+		<input type="password" name="pw">
+		<label for="confirm_pw">Confirm Password:</label>
+		<input type="password" name="confirm_pw">
+		<input type="submit" value="Register">
+	</form>
+</body>
+</html>
