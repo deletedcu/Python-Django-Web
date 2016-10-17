@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Landing Page for Registrations</title>
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='index.css') }}">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Registration</h1>
+      <div id="bottom-wrap">
+        <div class="entry">
+          <p>To register fill out the details below:</p>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+          {% for category, message in messages %}
+            <p class="{{ category }}">{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+          <form class="registration" action="/registration/submit" method="post">
+            <p>Username: <input type="text" name="username"></p>
+            <p>First Name: <input type="text" name="first_name"></p>
+            <p>Last Name: <input type="text" name="last_name"></p>
+        </div>
+        <div class="entry">
+            <p>Registration Continued:</p>
+            <p>Email: <input type="text" name="email"></p>
+            <p>Password: <input type="text" name="password"></p>
+            <p>Confirm Pw: <input type="password" name="confpwd"></p>
+            <button type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

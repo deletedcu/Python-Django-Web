@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Landing Page for Registrations</title>
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='index.css') }}">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Welcome {{session['user']['username']}}</h1>
+      <div>
+        <div id="pre-wall">
+          <div id="dashboard">
+            <form action="/logout" method="post">
+              <button type="submit">Logout</button>
+            </form>
+          </div>
+        <div>
+      </div>
+    </div>
+  </body>
+</html>
