@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<form action ='/home' method ='POST'>
+		<h1>You are logged in!</h1>
+		{% for user in user_info %}
+			<p>First Name : {{user['first_name']}}</p>
+			<p>Last Name : {{user['last_name']}}</p>
+			<p>Email : {{user['email']}}</p>
+		{% endfor %}
+		<a href="/logout">Log out</a>
+
+	</form>
+
+
+</body>
+</html>
