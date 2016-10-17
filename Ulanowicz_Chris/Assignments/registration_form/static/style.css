@@ -1,0 +1,18 @@
+label {
+	display: block;
+	margin-bottom: 12px;
+}
+
+fieldset {
+	width: 50%;
+	margin: 0px auto;
+	padding: 20px;
+}
+
+.error {
+	color: red;
+	font-style: italic;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 5px;
+}
