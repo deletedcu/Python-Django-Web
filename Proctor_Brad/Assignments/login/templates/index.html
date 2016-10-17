@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login and Registration</title>
+    </head>
+    <style>
+        *{
+            text-align: center;
+        }
+        input{
+            text-align: left;
+        }
+    </style>
+    <body>
+        <h1>LOGIN</h1>
+
+        <form action="/login" method='post'/>
+            <p>Email: <input type="text" name="email" placeholder='Email'/></p>
+            <p>Password: <input type="password" name="pwd" placeholder='Password'/></p>
+            <p><input type="submit" name="submit" value="Login"/></p>
+        </form>
+        <h3><a href = '/register'>Register</a></h3>
+        <h3><a href = '/logout'>Logout</h3>
+    </body>
+</html>
