@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="Junaid_page" content="Discription">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+</head>
+<body>
+	<div id="wrapper">
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+				<p>{{message}}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<form class="{{session['Login_class']}}" action="/login" method="POST">
+			User Name: <input type="email" name="email">
+			<br>
+			Password: <input type="password" name="password">
+			<br>			
+			<input type="submit" name="action" value="Login">	
+		</form>		
+		<form class="{{session['Register_class']}}" action="/register" method="POST">
+			Email: <input type="email" name="email">
+			<br>
+			First Name: <input type="text" name="first_name">
+			<br>
+			Last Name: <input type="text" name="last_name">
+			<br>
+			Password: <input type="password" name="password">
+			<br>
+			Confirm Password: <input type="text" name="c_password">
+			<br>
+			<input type="submit" name="action" value="Register">	
+								
+		</form>
+	</div>
+</body>
+</html>

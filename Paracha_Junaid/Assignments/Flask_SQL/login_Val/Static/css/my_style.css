@@ -1,0 +1,33 @@
+*{
+	border: none;
+	margin: none;
+	outline: none;
+	padding: none;
+}
+#wrapper {
+	margin: 0 auto;
+	width: 970px;
+	/*vertical-align: top;*/
+	padding: 20px;
+	/*text-align: center;*/
+}
+
+form {
+	width: 400px;
+	height: 250px;
+	/*padding-right: 20px;*/
+	/*display: inline-block;*/
+	text-align: right;
+	/*border: 2px solid black;*/
+}
+input {
+	border: 2px solid black;
+
+}
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+
+}
